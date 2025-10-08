@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "Rosatto: Cocina mediterránea en Acapulco (Costa Azul)",
+    "cta": "Reservar por WhatsApp"
+  },
+  "menu": { "title": "Menú Rosatto" },
+  "booking": { "title": "Reservaciones" },
+  "gallery": { "title": "Galería" },
+  "contact": { "title": "Contacto & Cómo llegar" }
+}

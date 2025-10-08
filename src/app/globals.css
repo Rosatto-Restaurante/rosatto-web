@@ -1,0 +1,13 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Estilo base Rosatto ---- */
+:root { color-scheme: light dark; }
+
+html, body {
+  background: #0d0d0d;   /* rosatto.black */
+  color: #f5efe6;        /* rosatto.cream */
+  font-family: ui-sans-serif, system-ui, Inter, sans-serif;
+}

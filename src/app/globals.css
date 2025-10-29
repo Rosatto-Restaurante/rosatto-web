@@ -1,13 +1,250 @@
-
+/* --- Tailwind layers --- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Estilo base Rosatto ---- */
-:root { color-scheme: light dark; }
+/* --- Tokens globales --- */
+:root {
+  --dl-bg: #F7F3EA;   /* crema papel (liso) */
+  --dl-dark: #0D141B;
+  --dl-gold: #C8A661;
+  --dl-grey: #6C6F73;
+  --dl-white: #FFFFFF;
+  --dl-black: #0A0A0A;
 
-html, body {
-  background: #0d0d0d;   /* rosatto.black */
-  color: #f5efe6;        /* rosatto.cream */
-  font-family: ui-sans-serif, system-ui, Inter, sans-serif;
+  /* Tipografías (next/font inyecta variables; aquí solo nombres semánticos) */
+  --font-display: 'Poiret One', system-ui, sans-serif;
+  --font-sans: 'Jost', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+  /* Cursor (no forzamos estilos; solo ponemos color disponible para tu componente) */
+  --cursor-color: #A82C55; /* magenta de la paleta */
 }
+
+/* --- Baseline --- */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--dl-gray);
+  background-color: var(--dl-bg);  /* FONDO LISO RESTAURADO */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titulares estilo “Dolores”: Poiret + tracking */
+h1, h2, .heading-display {
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--dl-dark);
+  letter-spacing: 0.09rem;
+}
+
+/* Eyebrow */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--dl-grey);
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* Banda dorada inferior (decorador) */
+.band-gold {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent calc(100% - 6px),
+    var(--dl-gold) calc(100% - 6px),
+    var(--dl-gold) 100%
+  );
+}
+
+/* Subrayado dorado con offset para links del Header */
+.link-gold { position: relative; text-underline-offset: 8px; }
+.link-gold::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 6px;
+  background: var(--dl-gold);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s cubic-bezier(.22,.61,.36,1), transform .25s cubic-bezier(.22,.61,.36,1);
+}
+.link-gold:hover::after,
+.link-gold:focus-visible::after,
+.link-gold[aria-current="page"]::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header glass (no intrusivo) */
+.header-glass {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(78, 78, 78, 0.4);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+}
+
+/* Botones base (por si hay <a> sueltos) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  font-size: 0.875rem;     /* text-sm */
+  font-weight: 500;
+  transition: all .25s cubic-bezier(.22,.61,.36,1);
+}
+.btn-primary { background-color: var(--dl-dark); color: var(--dl-white); }
+.btn-primary:hover { background-color: var(--dl-black); }
+.btn-outline { border: 1px solid var(--dl-dark); color: var(--dl-dark); background: transparent; }
+.btn-outline:hover { background-color: var(--dl-dark); color: var(--dl-white); }
+
+/* Imagen con hover sutil */
+.img-zoom { transition: transform .6s cubic-bezier(.22,.61,.36,1), filter .6s cubic-bezier(.22,.61,.36,1); }
+.img-zoom:hover { transform: translateY(-2px) scale(1.02); }
+
+/* Foco accesible */
+:focus-visible {
+  outline: 2px solid var(--dl-gold);
+  outline-offset: 2px;
+}
+
+/* -------------------------------
+   Cursor (solo punto)
+   ------------------------------- */
+:root {
+  /* Color de cursor; si quieres otro, cambia aquí o sobreescribe con .cursor-theme-magenta */
+  --cursor-color: #A82C55; /* magenta */
+}
+
+/* clase opcional por si quieres tematizar desde el DOM */
+.cursor-theme-magenta {
+  --cursor-color: #A82C55;
+}
+
+.has-custom-cursor {
+  cursor: none; /* ocultar cursor nativo mientras el custom está activo */
+}
+
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  background: var(--cursor-color);
+  opacity: 0;
+  /* Posición controlada por variables CSS desde TS */
+  left: var(--x, -100px);
+  top: var(--y, -100px);
+  transform: translate(-50%, -50%) scale(var(--s, 1));
+  transition:
+    opacity .2s ease,
+    transform .08s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot {
+    transition: opacity .2s ease;
+  }
+}
+
+/* ===========================
+   HERO: panel, título y CTA (sin @apply)
+   =========================== */
+
+/* Caja navy del panel */
+/* evita “marco” beige por margen del user agent */
+html, body { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* HERO panel — centrado y banda dorada */
+.hero-panel {
+  position: relative;
+  top: -100px;
+  background-color: rgba(13, 20, 27);
+  padding: 1.5rem 1.25rem; /* py-6 px-5 */
+  /*box-shadow: 0 14px 40px rgba(0,0,0,.35);*/
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  /*border-radius: 0.5rem;*/
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  bottom: -12px;
+  height: 12px;
+  width: 90%;
+  background: #ffba2f;
+  /*border-radius: 3px;*/
+}
+
+.hero-title {
+  font-family: var(--font-display, 'Poiret One'), system-ui, sans-serif;
+  text-transform: uppercase;
+  color: #F7F3EA;
+  text-align: center;        /* 👈 centrado forzado */
+  letter-spacing: 0.03em;
+  font-size: 2rem;
+  line-height: 1.18;
+  padding-right: 1.5rem; /* evitar que el texto toque el borde */
+  padding-left: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-panel { border-radius: 0.75rem; padding: 3rem; }
+  .hero-panel::after { left: 56px; bottom: -16px; height: 14px; width: 74%; }
+  .hero-title { text-align: center; font-size: 56px; line-height: 1.1; } /* 👈 centrado desktop */
+}
+
+/* CTA dentro del panel: texto blanco → magenta al hover; flecha siempre magenta; sin subrayado ni visited púrpura */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: rgba(255,255,255,.90);
+}
+.hero-cta:visited { color: rgba(255,255,255,.90); }
+.hero-cta:hover { color: #A82C55; }
+.hero-cta .label { font-weight: 500; font-size: 0.875rem; } /* ~text-sm */
+.hero-cta .arrow {
+  color: #A82C55;               /* siempre magenta */
+  transform: translateY(1px);
+  transition: transform .2s ease;
+}
+.hero-cta:hover .arrow { transform: translate(4px, 1px); }
+
+/* ===== Desktop (md) ===== */
+@media (min-width: 768px) {
+  .hero-panel {
+    border-radius: 0.75rem;     /* ~rounded-lg */
+    padding: 3rem;              /* px-12 py-12 aprox */
+  }
+  .hero-panel::after {
+    left: 56px;                 /* offset lateral desktop */
+    bottom: -16px;
+    height: 14px;
+    width: 74%;
+  }
+  .hero-title {
+    text-align: left;
+    font-size: 56px;            /* ajusta aquí para clavar el tamaño */
+    line-height: 1.10;
+  }
+  .hero-cta .label { font-size: 1rem; } /* ~text-base */
+}
+
+/* ===========================
+   FIN HERO
+   =========================== */
+
+   /* Asegura que el header nunca sea inline ni tenga max-width accidental */
+header { display: block; width: 100%; }
+

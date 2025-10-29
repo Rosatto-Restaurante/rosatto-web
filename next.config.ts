@@ -1,11 +1,11 @@
-// next.config.ts
-import createNextIntlPlugin from 'next-intl/plugin'
-import type {NextConfig} from 'next'
-
-const withNextIntl = createNextIntlPlugin()
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* puedes dejarlo vacío por ahora */
-}
+  reactStrictMode: true,
+  images: { remotePatterns: [] },
+  // Turbopack ya es el motor por defecto en dev; esta línea es opcional:
+  turbopack: {},
+};
 
-export default withNextIntl(nextConfig)
+export default nextConfig;
+  

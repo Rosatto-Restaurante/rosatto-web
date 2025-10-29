@@ -1,17 +1,13 @@
-'use client'
-import { trackWhatsAppClick } from '@/lib/analytics'
+"use client";
 export default function WhatsAppCTA() {
-  const phone = '+527444097491'
-  const text = encodeURIComponent('Hola Rosatto, quiero reservar una mesa.')
-  const href = `https://wa.me/${phone}?text=${text}`
   return (
     <a
-      href={href}
-      onClick={() => trackWhatsAppClick('floating_button')}
-      className="fixed bottom-4 right-4 z-50 rounded-full bg-rosatto-gold text-rosatto-black px-5 py-3 shadow md:hidden"
-      aria-label="Reservar por WhatsApp"
+      href="wa.link/1ljf0c"
+      aria-label="Escríbenos por WhatsApp"
+      onClick={() => window?.gtag?.('event','whatsapp_click',{source:'floating_button'})}
+      className="fixed right-4 bottom-4 z-50 rounded-pill bg-dl.gold text-dl.dark px-5 py-3 shadow-soft hover:bg-dl.goldHover transition-colors"
     >
-      Reservar
+      WhatsApp
     </a>
-  )
+  );
 }

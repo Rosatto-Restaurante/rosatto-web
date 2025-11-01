@@ -45,7 +45,7 @@ export default function Hero() {
         />
 
         {/* Overlay de contraste */}
-        <div className="absolute inset-0 z-40 bg-black/100 md:bg-black/40" />
+        <div className="absolute inset-0 z-20 bg-black/40" />
       </section>
 
       {/* H1 solo para SEO */}

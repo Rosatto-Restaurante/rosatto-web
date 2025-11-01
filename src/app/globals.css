@@ -27,7 +27,7 @@ body {
   font-family: var(--font-sans);
   font-size: 17px;
   line-height: 1.65;
-  color: var(--dl-gray);
+  color: var(--dl-grey);
   background-color: var(--dl-bg);  /* FONDO LISO RESTAURADO */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

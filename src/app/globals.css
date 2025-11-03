@@ -85,7 +85,7 @@ h1, h2, .heading-display {
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   background-color: rgba(78, 78, 78, 0.4);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+ 
 }
 
 /* Botones base (por si hay <a> sueltos) */

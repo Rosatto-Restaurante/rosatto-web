@@ -37,7 +37,7 @@ export default function Header() {
         ].join(" ")}
       >
         {/* Contenido centrado dentro de la barra */}
-        <div className="mx-auto max-w-7xl h-full px-[1rem] py-[1rem] sm:px-6 lg:px-[10rem]">
+        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8">
           <nav className="flex h-full items-center justify-between" aria-label="Primary">
             <Link href="/" className="flex items-center gap-3 group">
               <Image

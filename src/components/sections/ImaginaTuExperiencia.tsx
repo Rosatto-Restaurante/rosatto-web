@@ -25,7 +25,7 @@ export default function ImaginaTuExperiencia() {
           className={[
             "font-display uppercase text-center text-dl-dark",
             "tracking-[.20rem]",             // ★ caps con aire editorial (rem aquí por consistencia con el H2 previo)
-            "text-[2.3rem] md:text-[2.6rem] leading-[1]",
+            "text-[2.3rem] md:text-[2.6rem] leading-[1] py-20",
           ].join(" ")}
         >
           {xp.h2b}
@@ -66,14 +66,14 @@ export default function ImaginaTuExperiencia() {
           className={[
             "font-display uppercase text-dl-dark",
             "tracking-[.20rem]",             // ★ caps con aire editorial (rem aquí por consistencia con el H2 previo)
-            "text-[2.3rem] md:text-[2.6rem] leading-[1]",
+            "text-[2.3rem] md:text-[2.6rem] leading-[1] py-10",
           ].join(" ")}
         >
           {xp.h2c}
         </h2>
 
         {/* Párrafos 3–4 */}
-        <div className = "leading-[1.3]">
+        <div className = "leading-[1.3] space-y-4">
           <p>{xp.p3}</p>
           <p>{xp.p4}</p>
         </div>
@@ -83,14 +83,14 @@ export default function ImaginaTuExperiencia() {
           className={[
             "font-display uppercase text-dl-dark",
             "tracking-[.20rem]",             // ★ caps con aire editorial (rem aquí por consistencia con el H2 previo)
-            "text-[2.3rem] md:text-[2.6rem] leading-[1]",
+            "text-[2.3rem] md:text-[2.6rem] leading-[1] py-10",
           ].join(" ")}
         >
           {st.h2}
         </h2>
 
         {/* Párrafos 3–4 */}
-        <div className = "leading-[1.3]">
+        <div className = "leading-[1.3] space-y-4">
           <p>{st.p1}</p>
           <p>{st.p2}</p>
         </div>

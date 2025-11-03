@@ -3,7 +3,6 @@
 const nextConfig = {
   reactStrictMode: true,
   images: { remotePatterns: [] },
-  turbopack: {},
 };
 
-module.exports = nextConfig; // 👈 USA module.exports
+module.exports = nextConfig;

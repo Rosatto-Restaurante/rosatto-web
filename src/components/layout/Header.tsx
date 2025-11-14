@@ -32,12 +32,17 @@ export default function Header() {
       {/* Capa visual FULL-BLEED de la barra */}
       <div
         className={[
-          "w-full h-16 sm:h-[76px] transition-all duration-300 ease-smooth",
-          scrolled ? "header-glass shadow-soft" : "bg-transparent",
+          "w-full transition-all duration-300 ease-smooth",
+          // REFRACTOR: 'header-glass' reemplazado por utilidades. 'shadow-soft' (de tu config) se mantiene.
+          scrolled
+            ? "bg-dl-dark/40 backdrop-blur-xs shadow-soft"
+            : "bg-transparent",
         ].join(" ")}
       >
         {/* Contenido centrado dentro de la barra */}
-        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8">
+        {/* REFRACTOR: Padding arbitrario (px-[1rem] py-[1rem] lg:px-[10rem]) reemplazado por estándar.
+            'py-4' añade el espacio vertical solicitado para el logo. */}
+        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex h-full items-center justify-between" aria-label="Primary">
             <Link href="/" className="flex items-center gap-3 group">
               <Image
@@ -46,7 +51,8 @@ export default function Header() {
                 width={160}
                 height={80}
                 priority
-                className="transition-transform duration-300 group-hover:scale-[1.02]"
+                // NOTE: 'h-auto' es importante para mantener el aspect ratio de la imagen
+                className="transition-transform duration-300 group-hover:scale-[1.02] w-40 h-auto"
               />
             </Link>
 
@@ -59,10 +65,12 @@ export default function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={[
-                        "link-gold font-display tracking-wide2 text-[15px]",
+                        // REFRACTOR: 'text-[15px]' (arbitrario) -> 'text-sm'.
+                        "link-gold font-display tracking-wide2 text-sm",
+                        // REFRACTOR: Color de texto cambiado a claro (white/cream) para contrastar con 'bg-dl-dark/40'.
                         active
-                          ? "text-dl-dark"
-                          : "text-dl-dark/90 hover:text-dl-dark",
+                          ? "text-dl-white"
+                          : "text-dl-cream/90 hover:text-dl-white",
                       ].join(" ")}
                     >
                       {item.label}
@@ -74,14 +82,23 @@ export default function Header() {
 
             {/* CTA desktop */}
             <div className="hidden md:block">
-              <Link href="/booking" className="btn btn-primary rounded-full">
+              {/* REFRACTOR: Clases globales '.btn .btn-primary' reemplazadas por utilidades de Tailwind.
+                  Se usa 'bg-dl-gold' para mejor contraste. */}
+              <Link
+                href="https://bit.ly/3WIt1Di"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-medium transition bg-dl-dark text-dl-white hover:bg-dl-black"
+              >
                 Reservar
               </Link>
             </div>
 
             {/* CTA mobile (si no hay menú hamburguesa) */}
             <div className="md:hidden">
-              <Link href="/booking" className="btn btn-primary rounded-full text-sm">
+              {/* REFRACTOR: Clases globales '.btn .btn-primary' reemplazadas. */}
+              <Link
+                href="https://bit.ly/3WIt1Di"
+                className="inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-medium transition bg-dl-magenta text-dl-white hover:bg-dl-black"
+              >
                 Reservar
               </Link>
             </div>
@@ -89,10 +106,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Línea dorada FULL-BLEED al hacer scroll (decorativa, opcional) */}
-      {scrolled && (
-        <div className="absolute inset-x-0 bottom-0 h-[6px] bg-dl-gold" aria-hidden />
-      )}
+      {/* REFACTOR: Eliminado el cintillo dorado (`bg-dl-gold`) según la solicitud. */}
     </header>
   );
 }

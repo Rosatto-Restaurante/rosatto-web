@@ -1,101 +1,109 @@
-
-import Link from "next/link"; // ★ import faltante
+import Link from "next/link";
 import Image from "next/image";
-// import Heading from "@/components/ui/Heading"; // (opcional) no se usa en este snippet
 import { homeContent } from "@/content/home.es";
 
-// Dataset temporal de imágenes (cámbialo cuando tengas las reales)
-const items = [
-  { src: "/assets/menu/signature-1.jpg", alt: "Pulpo al pesto a la parrilla" },
-  { src: "/assets/home/hero.jpg", alt: "Brindis con spritz en mesa exterior" },
-  { src: "/assets/home/hero.jpg", alt: "Tagliolini al limón con mascarpone" },
-  { src: "/assets/home/hero.jpg", alt: "Róbalo al estilo mediterráneo" },
-  { src: "/assets/home/hero.jpg", alt: "Interior mediterráneo con cava" },
-];
+// REFACTOR: Eliminado el dataset temporal de imágenes
+// const items = [ ... ];
 
 export default function ImaginaTuExperiencia() {
-  const xp = homeContent.experiencia; // ★ define xp (antes faltaba)
+  const xp = homeContent.experiencia;
   const st = homeContent.story;
+  
+  // REFACTOR: Leemos las imágenes desde la ubicación correcta (xp.galleryGrid)
+  const items = xp.galleryGrid; 
+
   return (
-    <section className="relative isolate bg-dl-cream"> {/* ★ fondo claro, sin puntos en el token */}
-      <div className="mx-auto max-w-6xl px-[1.5rem] sm:px-[2.5rem] lg:px-[3.5rem] py-[4rem] md:py-[6rem]"> {/* ★ espaciado arbitrario */}
+    <section className="relative isolate bg-dl-cream">
+      {/* REFACTOR: Paddings arbitrarios -> estándar (px-4, py-20, etc.) */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-24">
         
         {/* Subtítulo 1 (viene de experiencia.h2b) */}
         <h2
           className={[
             "font-display uppercase text-center text-dl-dark",
-            "tracking-[.20rem]",             // ★ caps con aire editorial (rem aquí por consistencia con el H2 previo)
-            "text-[2.3rem] md:text-[2.6rem] leading-[1] py-20",
+            // REFACTOR: tracking-[.20rem] -> tracking-ultra (de tu config)
+            "tracking-ultra",
+            // REFACTOR: text-[...] y py-20 -> text-4xl/5xl estándar
+            "text-4xl md:text-5xl leading-none",
           ].join(" ")}
         >
           {xp.h2b}
         </h2>
 
         {/* CTA centrada */}
-        <div className="mt-[1.5rem] text-center">
+        {/* REFACTOR: Paddings y texto arbitrarios -> estándar (px-6, py-3, text-sm) */}
+        <div className="mt-6 text-center">
           <Link
-            href="/booking"
-            className="inline-flex items-center gap-[0.5rem] rounded-full bg-dl-magenta text-white px-[1.5rem] py-[0.75rem] transition hover:opacity-90"
+            href="https://wa.link/1ljf0c?utm_source=sitio-rosatto&utm_medium=ImaginaTuExperiencia&utm_campaign=general"
+            className="inline-flex items-center gap-2 rounded-full bg-dl-magenta text-white px-6 py-3 transition hover:opacity-90"
           >
-            <span className="font-medium text-[0.95rem]">{xp.cta}</span>
+            <span className="font-medium text-sm">{xp.cta}</span>
             <span aria-hidden>→</span>
           </Link>
         </div>
 
-        {/* Grid de imágenes */}
-        <div className="mt-[1.5rem] grid grid-cols-2 md:grid-cols-3 gap-[1rem]">
+        {/* ----- INICIO DE LA MODIFICACIÓN: Grid Masonry ----- */}
+        {/* REFACTOR: Cambiado 'grid' por 'columns-' para layout masonry */}
+        <div className="mt-8 columns-2 md:columns-3 gap-4">
           {items.map((it, i) => (
-            <figure key={i} className="group overflow-hidden rounded-[12px] bg-white"> {/* ★ evitamos token inexistente */}
+            // REFACTOR: Añadido 'mb-4' y 'break-inside-avoid' para masonry
+            <figure key={i} className="group overflow-hidden rounded-[12px] bg-white mb-4 break-inside-avoid">
               <Image
                 src={it.src}
                 alt={it.alt}
-                width={640}
-                height={640}
-                sizes="(max-width: 768px) 50vw, 33vw"
+                // REFACTOR: Usamos 'width' y 'height' del content file
+                width={it.width}
+                height={it.height}
+                sizes="(max-width: 768px) 50vw, 33vw" // Sigue siendo vital para móvil
+                // REFACTOR: 'w-full h-auto' es correcto para masonry
                 className="w-full h-auto transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
                 loading="lazy"
               />
               <figcaption className="sr-only">{it.alt}</figcaption>
             </figure>
           ))}
-      </div>
-
-      <div className = "py-[4rem] md:py-[6rem]"> 
-        {/* Subtítulo 2 */}
-        <h2
-          className={[
-            "font-display uppercase text-dl-dark",
-            "tracking-[.20rem]",             // ★ caps con aire editorial (rem aquí por consistencia con el H2 previo)
-            "text-[2.3rem] md:text-[2.6rem] leading-[1] py-10",
-          ].join(" ")}
-        >
-          {xp.h2c}
-        </h2>
-
-        {/* Párrafos 3–4 */}
-        <div className = "leading-[1.3] space-y-4">
-          <p>{xp.p3}</p>
-          <p>{xp.p4}</p>
         </div>
+        {/* ----- FIN DE LA MODIFICACIÓN ----- */}
 
-      <div className = "py-[6rem] md:py-[6rem]">   
-         <h2
-          className={[
-            "font-display uppercase text-dl-dark",
-            "tracking-[.20rem]",             // ★ caps con aire editorial (rem aquí por consistencia con el H2 previo)
-            "text-[2.3rem] md:text-[2.6rem] leading-[1] py-10",
-          ].join(" ")}
-        >
-          {st.h2}
-        </h2>
+        {/* REFACTOR: Paddings y texto arbitrarios -> estándar */}
+        <div className = "py-16 md:py-24"> 
+          {/* Subtítulo 2 */}
+          <h2
+            className={[
+              "font-display uppercase text-dl-dark",
+              "tracking-ultra",
+              "text-4xl md:text-5xl leading-none",
+            ].join(" ")}
+          >
+            {xp.h2c}
+          </h2>
 
-        {/* Párrafos 3–4 */}
-        <div className = "leading-[1.3] space-y-4">
-          <p>{st.p1}</p>
-          <p>{st.p2}</p>
+          {/* Párrafos 3–4 */}
+          {/* REFACTOR: 'leading-[1.3]' -> 'leading-relaxed' (estándar) */}
+          <div className = "mt-6 space-y-4 text-base leading-relaxed">
+            <p>{xp.p3}</p>
+            <p>{xp.p4}</p>
+          </div>
+
+          {/* REFACTOR: Paddings y texto arbitrarios -> estándar */}
+          <div className = "py-16 md:py-24">   
+            <h2
+              className={[
+                "font-display uppercase text-dl-dark",
+                "tracking-ultra",
+                "text-4xl md:text-5xl leading-none",
+              ].join(" ")}
+            >
+              {st.h2}
+            </h2>
+
+            {/* Párrafos 3–4 */}
+            <div className = "mt-6 space-y-4 text-base leading-relaxed">
+              <p>{st.p1}</p>
+              <p>{st.p2}</p>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
       </div>
     </section>
   );

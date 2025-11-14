@@ -13,7 +13,7 @@ export const homeContent = {
     // Activos existentes en /public
     video: "/assets/home/video-dolores-desktop.mp4?v=2",
     poster: "/assets/home/hero.jpg",
-  },
+  }, // <-- COMA AÑADIDA
 
   experiencia: {
     h2a: "Tradición y vanguardia en un ambiente refinado y de buen gusto.",
@@ -24,14 +24,56 @@ export const homeContent = {
     h2c: "Imagina tu cena especial…",
     p3: "Luz cálida, texturas naturales y cava a la vista. La bahía se ilumina y llega tu plato favorito. Conversaciones que fluyen, servicio atento y un ritmo que invita a quedarte. Es el lugar perfecto para una cena especial en el puerto. Aquí podrás disfrutar una experiencia pensada y diseñada para los amantes de la buena mesa mientras saboreas un cocktail que se siente como una celebración en sí mismo.",
     p4: "Brinda al atardecer con un spritz; comparte pulpo al pesto, tagliolini al limón o róbalo mediterráneo. Nuestra coctelería de autor y cava de vinos harán el maridaje perfecto con tus mejores momentos.",
-  },
+  
+    // ----- INICIO DE LA MODIFICACIÓN -----
+    // REFACTOR: Movido galleryGrid DENTRO del objeto 'experiencia'
+    galleryGrid: [
+      { 
+        src: "/assets/gallery/corte-premium-rosatto-acapulco.jpeg", 
+        alt: "Corte premium a la parrilla con vino tinto servido en Rosatto Acapulco.",
+        width: 800,
+        height: 1200
+      },
+      { 
+        src: "/assets/gallery/entrada-queso-fundido-y chistorra-rosatto-acapulco.jpeg", 
+        alt: "Entrada gourmet de queso fundido con chistorra al horno en Rosatto Acapulco.",
+        width: 1200,
+        height: 800
+      },
+      { 
+        src: "/assets/gallery/tapa-jamon-serrano-rosatto-acapulco.jpeg", 
+        alt: "Tapas gourmet para compartir con jamón serrano y queso derretido en Rosatto Acapulco.",
+        width: 1200,
+        height: 800
+      },
+      { 
+        src: "/assets/gallery/bartender-cocktail-mixologia-artesanal-rosatto.jpeg", 
+        alt: "Bartender preparando un cocktail. Mixología artesanal y servicio personalizado en el bar de Rosatto.",
+        width: 800,
+        height: 1200
+      },
+      { 
+        src: "/assets/gallery/postre-de-cumpleanos-rosatto-acapulco.jpg", 
+        alt: "Postre de cumpleaños decorado con flores comestibles. Celebración personalizada en Rosatto Acapulco.",
+        width: 1200,
+        height: 800
+      },
+      { 
+        src: "/assets/gallery/pasta-gratinada-rosatto.jpeg", 
+        alt: "Pasta gratinada al horno con queso fundido y vino en Rosatto, restaurante mediterráneo en Acapulco.",
+        width: 800,
+        height: 1200
+      }
+    ]
+    // REFACTOR: La llave de 'experiencia' ahora cierra después de 'galleryGrid'
+  }, // <-- COMA AÑADIDA
 
   story: {
     h2: "Una joya en el corazón de Acapulco",
     p1: "Más que un restaurante, Rosatto es una experiencia que querrás compartir. Nuestros visitantes destacan la atención amable y profesional desde que llegan, y cada bocado se encargará de recordarte por qué este lugar se ha convertido en un favorito tanto para locales como para turistas.",
     p2: "Al final de la noche, te das cuenta de que Rosatto no es solo un restaurante, es un destino, es algo que no puedes esperar para contarle a tus amigos y planear con ellos una próxima visita. Ideal para cenas especiales, celebraciones y salidas memorables entre amigas, Rosatto siempre deja buen sabor de boca.",
     ctaWhatsapp: "Reserva fácil en WhatsApp",
-  },
+  }, // <-- COMA AÑADIDA
 
   contactTeaser: {
     h2: "Estamos aquí para ayudarte",
@@ -47,7 +89,7 @@ export const homeContent = {
       ["Sábado", "1:15 p.m. – 12:00 a.m."],
     ],
     ctas: { call: "Llamar ahora", wa: "WhatsApp", maps: "Abrir en Maps" },
-  },
+  }, // <-- COMA AÑADIDA
 
   tuEvento: {
     h2: "Planea tu evento con nosotros…",
@@ -56,14 +98,14 @@ export const homeContent = {
     p3: "Con nuestras deliciosas opciones de menú, servicio excepcional y un ambiente sin igual, tus invitados tendrán una experiencia inolvidable.",
     p4: "Diseñamos experiencias a medida con menú curado, maridajes y detalles especiales. ¡Contáctanos hoy para hablar sobre tus necesidades y déjanos ayudarte a crear recuerdos que perdurarán toda la vida!",
     cta: "Reserva tu evento",
-  },
+  }, // <-- COMA AÑADIDA
 
   newsletter: {
     p: "¿Quieres recibir nuestras actualizaciones sobre menús de temporada, promociones para tu cumpleaños, eventos, experiencias y catas en cava. Déjanos tu email aquí.",
     emailPlaceholder: "Email*",
     checkbox: "Acepto términos y aviso de privacidad.",
     cta: "Suscribirme",
-  },
+  }, // <-- COMA AÑADIDA
 
  menuPreview: {
     categories: [
@@ -93,9 +135,5 @@ export const homeContent = {
       // "risottos", "pescados", "carnes", "cortes", "guarniciones", "cocteleria", "postres"
     ]
   }
-
+  // REFACTOR: Eliminada la llave '}' y la coma ',' fuera de lugar que causaban el error
 };
-
-
-
-

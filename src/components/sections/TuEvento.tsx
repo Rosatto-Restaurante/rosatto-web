@@ -32,7 +32,7 @@ export default function ImaginaTuExperiencia() {
     {/* CTA centrada */}
         <div className="mt-[1.5rem] text-center">
           <Link
-            href="/booking"
+            href="https://wa.link/dw9cxl?utm_source=sitio-rosatto&utm_medium=TuEvento&utm_campaign=general"
             className="inline-flex items-center gap-[0.5rem] rounded-full bg-dl-magenta text-white px-[1.5rem] py-[0.75rem] transition hover:opacity-90"
           >
             <span className="font-medium text-[0.95rem]">{te.cta}</span>

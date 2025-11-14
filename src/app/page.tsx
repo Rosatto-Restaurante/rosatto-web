@@ -9,6 +9,7 @@ import ContactPanel from "@/components/sections/ContactPanel";
 import Newsletter from "@/components/sections/Newsletter";
 import ImaginaTuExperiencia from "@/components/sections/ImaginaTuExperiencia";
 import TuEvento from "@/components/sections/TuEvento";
+import Reviews from "@/components/sections/Reviews";
 
 export default function Home() {
   return (
@@ -28,8 +29,9 @@ export default function Home() {
         {/* Luego la galería / menú */}
         <ImaginaTuExperiencia />
         <MenuPreview />
-        <TuEvento/>
+        <Reviews />
         <ContactPanel />
+        <TuEvento/>
         <Newsletter />
       </main>
       <Footer />

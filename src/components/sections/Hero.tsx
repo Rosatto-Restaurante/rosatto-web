@@ -44,9 +44,25 @@ export default function Hero() {
           className="object-cover object-center z-0"
         />
 
-        {/* Overlay de contraste */}
+         {/* Overlay de contraste */}
         <div className="absolute inset-0 z-20 bg-black/40" />
+
+        {/* ----- INICIO DE LA MODIFICACIÓN ----- */}
+        {/* REFACTOR: Z-index aumentado de 25 a 40 para que esté SOBRE el panel de texto (z-30) */}
+        <div className="absolute inset-0 z-40 flex items-center justify-center pb-20 md:pb-24 pointer-events-none">
+          <Image
+            src="/assets/brand/logo-rosatto2.svg"
+            alt="Rosatto"
+            width={200} // Ancho base para Next/Image
+            height={200} // Alto base para Next/Image
+            priority
+            className="w-[200px] md:w-[200px] h-auto" // Clases responsivas
+          />
+        </div>
+        {/* ----- FIN DE LA MODIFICACIÓN ----- */}
       </section>
+
+      
 
       {/* H1 solo para SEO */}
       {h1 && <h1 className="sr-only">{h1}</h1>}
@@ -61,7 +77,7 @@ export default function Hero() {
 
                 {cta && (
                   <div className="mt-6 md:mt-8 text-center">
-                    <Link href="/booking" className="hero-cta">
+                    <Link href="https://bit.ly/3JR561v" className="hero-cta">
                       <span className="label">{cta}</span>
                       <span aria-hidden className="arrow">→</span>
                     </Link>

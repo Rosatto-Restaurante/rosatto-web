@@ -9,7 +9,7 @@ export default function Hero() {
   const { h1, h2, cta, video, poster } = homeContent.hero ?? {};
   const posterUrl = poster || "/assets/home/hero.jpg";
   const videoUrl =
-    (video || "/assets/home/video-dolores-desktop.mp4") +
+    (video || "/assets/home/video-Rosatto-desktop.mp4") +
     (video?.includes("?") ? "" : "?v=5"); // cache-bust por si re-encodeaste
 
   const hasHeadline = typeof h2 === "string" && h2.trim().length > 0;
@@ -51,7 +51,7 @@ export default function Hero() {
         {/* REFACTOR: Z-index aumentado de 25 a 40 para que esté SOBRE el panel de texto (z-30) */}
         <div className="absolute inset-0 z-40 flex items-center justify-center pb-20 md:pb-24 pointer-events-none">
           <Image
-            src="/assets/brand/logo-rosatto2.svg"
+            src="/assets/brand/Logo-Rosatto-horizontal_blanco.svg"
             alt="Rosatto"
             width={200} // Ancho base para Next/Image
             height={200} // Alto base para Next/Image

@@ -11,7 +11,7 @@ export const homeContent = {
     cta: "¡Te estamos esperando!",
 
     // Activos existentes en /public
-    video: "/assets/home/video-dolores-desktop.mp4?v=2",
+    video: "/assets/home/video-Rosatto-desktop.mp4?v=2",
     poster: "/assets/home/hero.jpg",
   }, // <-- COMA AÑADIDA
 

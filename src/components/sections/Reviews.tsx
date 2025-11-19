@@ -267,7 +267,7 @@ export default function Reviews() {
       </div>
 
       {/* Segunda fila */}
-      <div className="marquee-row w-full max-w-none overflow-hidden relative mt-4">
+      <div className="marquee-reverse w-full max-w-none overflow-hidden relative mt-4">
         <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-dl-cream to-transparent"></div>
 
         {/* REFACTOR: Añadido 'w-max' para arreglar el salto en móvil */}

@@ -25,27 +25,6 @@ export default function Footer() {
           </ul>
         </div>
         
-        {/* Columna 3: Páginas */}
-        <div>
-          {/* REFACTOR: font-sans (Jost), medium (500), magenta, y tracking-wide2 */}
-          <h4 className="font-sans tracking-wide2 uppercase text-dl-magenta text-lg mb-3">Páginas</h4>
-          <ul className="space-y-2 text-sm opacity-90">
-            <li><Link href="/menu" className="hover:opacity-80">Menú</Link></li>
-            <li><Link href="/gallery" className="hover:opacity-80">Galería</Link></li>
-            <li><Link href="/booking" className="hover:opacity-80">Reservas</Link></li>
-            <li><Link href="/contact" className="hover:opacity-80">Contacto</Link></li>
-          </ul>
-        </div>
-        
-        {/* Columna 4: Restaurantes */}
-        <div>
-          {/* REFACTOR: font-sans (Jost), medium (500), magenta, y tracking-wide2 */}
-          <h4 className="font-sans tracking-wide2 uppercase text-dl-magenta text-lg mb-3">Restaurantes</h4>
-          <ul className="space-y-2 text-sm opacity-90">
-            <li>Rosatto Acapulco</li>
-            <li>—</li>
-          </ul>
-        </div>
       </div>
 
       {/* Barra inferior */}

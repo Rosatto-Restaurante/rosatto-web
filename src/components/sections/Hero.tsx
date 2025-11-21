@@ -7,9 +7,9 @@ import { homeContent } from "@/content/home.es";
 
 export default function Hero() {
   const { h1, h2, cta, video, poster } = homeContent.hero ?? {};
-  const posterUrl = poster || "/assets/home/hero.jpg";
+  const posterUrl = poster || "/assets/home/experiencia-cena-y-brindis-en-rosatto-costa-azul.webp";
   const videoUrl =
-    (video || "/assets/home/video-Rosatto-desktop.mp4") +
+    (video || "/assets/home/video-Rosatto-desktop_1.mp4") +
     (video?.includes("?") ? "" : "?v=5"); // cache-bust por si re-encodeaste
 
   const hasHeadline = typeof h2 === "string" && h2.trim().length > 0;

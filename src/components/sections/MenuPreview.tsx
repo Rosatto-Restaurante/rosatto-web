@@ -1,45 +1,238 @@
 // src/components/sections/MenuPreview.tsx
-// ★ FIX ALIGN: Revertido a 'mx-auto' (centrado estándar). El fix real está en 'page.tsx'.
-// ★ FIX PREVIEW: Valores arbitrarios para que el preview del Canvas se vea bien.
-// ★ FIX CAPTION: Opacidad aumentada a `bg-white/80` (valor arbitrario).
-
 "use client";
 
 import { useMemo, useState, useCallback } from "react";
-// import Image from "next/image"; // Removido para el preview
-// import { homeContent } from "@/content/home.es"; // Removido para el preview
 
-// --- Contenido inyectado para el preview ---
+// --- Contenido del Menú ---
 const homeContent = {
   menuPreview: {
     categories: [
       {
         tag: "entradas",
-        label: "Entradas & Tapas",
+        label: "Entradas",
         items: [
-          { id: "pulpo-pesto", title: "Pulpo al pesto", caption: "A las brasas con pesto verde", price: "$$", src: "/assets/menu/signature-1.jpg", alt: "Pulpo al pesto a la parrilla" },
-          { id: "spritz", title: "Brindis con spritz", caption: "Aperitivo cítrico", src: "/assets/home/hero.jpg", alt: "Brindis con spritz en mesa exterior" },
-          { id: "tagliolini-limon", title: "Tagliolini al limón", caption: "Mascarpone y limón", src: "/assets/home/hero.jpg", alt: "Tagliolini al limón con mascarpone" },
-          { id: "robalo", title: "Róbalo mediterráneo", caption: "Hierbas y aceite de oliva", src: "/assets/home/hero.jpg", alt: "Róbalo al estilo mediterráneo" },
-          { id: "cava", title: "Cava & ambiente", caption: "Interior mediterráneo", src: "/assets/home/hero.jpg", alt: "Interior mediterráneo con cava" },
+          { 
+            id: "carpaccio-res", 
+            title: "Carpaccio De Res", 
+            caption: "Láminas finas de res frescas", 
+            price: "$230", 
+            src: "/assets/menu/carpaccio-de-Res-Rosatto-Acapulco.webp", 
+            alt: "Carpaccio de res servido en Rosatto restaurante Acapulco" 
+          },
+          { 
+            id: "fondue-queso", 
+            title: "Fondue De Queso", 
+            caption: "Ideal para compartir", 
+            price: "$480", 
+            src: "/assets/menu/fondue-de-queso-Rosatto-Acapulco.webp", 
+            alt: "Fondue de queso derretido con pan en Rosatto Acapulco" 
+          },
+          { 
+            id: "atun-pesto", 
+            title: "Atún Sellado Al Pesto", 
+            caption: "Con costra de pesto fresco", 
+            price: "$420", 
+            src: "/assets/menu/atun-sellado-al-pesto-Rosatto-Acapulco.webp", 
+            alt: "Atún sellado al pesto plato gourmet en Rosatto Acapulco" 
+          },
+          { 
+            id: "tempura-mar", 
+            title: "Tempura Del Mar", 
+            caption: "Camarón, calamar y verduras fritas", 
+            price: "$229", 
+            src: "/assets/menu/tempura-de-mar-Rosatto-Acapulco.webp", 
+            alt: "Tempura del mar con camarones y calamar en Rosatto Acapulco" 
+          },
+          { 
+            id: "chistorra", 
+            title: "Gratinado De Chistorra", 
+            caption: "Sartén de queso con chistorra", 
+            price: "$229", 
+            src: "/assets/menu/gratinado-de-chistorra-Rosatto-Acapulco.webp", 
+            alt: "Queso fundido gratinado con chistorra en Rosatto Acapulco" 
+          },
+          { 
+            id: "tapa-salmon", 
+            title: "Tapa De Salmón", 
+            caption: "Bocado fresco de salmón", 
+            price: "$80", 
+            src: "/assets/menu/tapa_de_salmon-Rosatto-Acapulco.webp", 
+            alt: "Tapa de salmón aperitivo en Rosatto Acapulco" 
+          },
+          { 
+            id: "bolitas-queso", 
+            title: "Bolitas De Queso", 
+            caption: "Con flores de calabaza", 
+            price: "$160", 
+            src: "/assets/menu/bolitas-de-queso-y-flores-de-calabaza.webp", 
+            alt: "Bolitas de queso fritas con flor de calabaza en Rosatto Acapulco" 
+          },
+           { 
+            id: "sopa-mariscos", 
+            title: "Sopa De Mariscos", 
+            caption: "Fondo de mariscos selectos", 
+            price: "$239", 
+            src: "/assets/menu/sopa_De_Mariscos-Rosatto-Acapulco.webp", 
+            alt: "Sopa de mariscos caliente en Rosatto Acapulco" 
+          },
+          {
+            id: "ensalada-frutos",
+            title: "Ensalada Frutos Rojos",
+            caption: "Fresca y ligera",
+            price: "$200",
+            src: "/assets/menu/ensalada-de-frutos-rojos-Rosatto-Acapulco.webp",
+            alt: "Ensalada fresca con frutos rojos en Rosatto Acapulco"
+          }
+        ],
+      },
+      {
+        tag: "fuertes",
+        label: "Platos Fuertes",
+        items: [
+          { 
+            id: "tomahawk", 
+            title: "Tomahawk", 
+            caption: "Corte premium a la parrilla", 
+            price: "$1,890", 
+            src: "/assets/menu/tomahawk-Rosatto-Acapulco.webp", 
+            alt: "Corte de carne Tomahawk a la parrilla en Rosatto Acapulco" 
+          },
+          { 
+            id: "pulpo-parrilla", 
+            title: "Pulpo A La Parrilla", 
+            caption: "Con aceitunas y aceite de olivo", 
+            price: "$690", 
+            src: "/assets/menu/pulpo-a-la-parrilla-Rosatto-Acapulco.webp", 
+            alt: "Pulpo a la parrilla cocina mediterránea en Rosatto Acapulco" 
+          },
+           { 
+            id: "robalo-confitado", 
+            title: "Robalo Confitado", 
+            caption: "Con pimientos y papa", 
+            price: "$420", 
+            src: "/assets/menu/robalo-confitado-Rosatto-Acapulco.webp", 
+            alt: "Filete de robalo confitado con guarnición en Rosatto Acapulco" 
+          },
+          { 
+            id: "ribeye", 
+            title: "Cortes De Carnes", 
+            caption: "Rib eye de 400g con verduras", 
+            price: "$790", 
+            src: "/assets/menu/experiencia-corte-de-carnes-rosatto-acapulco.webp", 
+            alt: "Corte de carne Rib Eye a la parrilla en Rosatto Acapulco" 
+          },
+          { 
+            id: "camarones-ajo", 
+            title: "Camarones Crema Ajo", 
+            caption: "Clásicos al ajo cremoso", 
+            price: "$400", 
+            src: "/assets/menu/camarones-a-la-crema-de-ajo-Rosatto-Acapulco.webp", 
+            alt: "Camarones preparados a la crema de ajo en Rosatto Acapulco" 
+          },
+          { 
+            id: "robalo-almendrado", 
+            title: "Róbalo Almendrado", 
+            caption: "Costra crujiente de almendra", 
+            price: "$420", 
+            src: "/assets/menu/robalo-almendrado-Rosatto-Acapulco.webp", 
+            alt: "Róbalo almendrado platillo del mar en Rosatto Acapulco" 
+          }
         ],
       },
       {
         tag: "pastas",
-        label: "Pastas",
+        label: "Pastas & Risottos",
         items: [
-          { id: "tagliolini-trufa", title: "Tagliolini con trufa", caption: "Carpaccio & trufa fresca", price: "$$", src: "/assets/home/hero.jpg", alt: "Tagliolini con trufa" },
-          { id: "pappardelle-ragu", title: "Pappardelle al ragú", caption: "Res a fuego lento", src: "/assets/home/hero.jpg", alt: "Pappardelle con ragú" },
-          { id: "pasta-aglio-olio", title: "Pasta Aglio Olio", caption: "Con camarón", src: "/assets/home/hero.jpg", alt: "Aglio Olio con camarón" },
-          { id: "pesto-burrata", title: "Pasta al pesto", caption: "Con burrata y almendras", src: "/assets/home/hero.jpg", alt: "Pasta al pesto con burrata" },
-          { id: "mascarpone-limon", title: "Mascarpone & limón", caption: "Toque cítrico", src: "/assets/home/hero.jpg", alt: "Tagliolini mascarpone limón" },
+          { 
+            id: "risotto-trufa", 
+            title: "Risotto De Trufa", 
+            caption: "Con esencia y aceite de trufa", 
+            price: "$450", 
+            src: "/assets/menu/Risotto-de-Trufa-Rosatto-Acapulco.webp", 
+            alt: "Risotto de trufa con hongos y queso en Rosatto Acapulco" 
+          },
+          { 
+            id: "risotto-callo", 
+            title: "Risotto Callo de Hacha", 
+            caption: "Cremoso y del mar", 
+            price: "$430", 
+            src: "/assets/menu/Risotto-de-callo-de-hacha-Rosatto-Acapulco.webp", 
+            alt: "Risotto con callo de hacha en Rosatto Acapulco" 
+          },
+          { 
+            id: "pasta-panna", 
+            title: "Pasta Panna Camarones", 
+            caption: "Tagliatele a la crema", 
+            price: "$370", 
+            src: "/assets/menu/pasta-Panna-Con-Camarones-Rosatto-Acapulco.webp", 
+            alt: "Pasta Panna con camarones y queso en Rosatto Acapulco" 
+          },
+          { 
+            id: "pasta-arrabiata", 
+            title: "Pasta Mariscos Arrabiata", 
+            caption: "Ligeramente picante", 
+            price: "$399", 
+            src: "/assets/menu/pasta-Mariscos-Arrabiata-Rosatto-Acapulco.webp", 
+            alt: "Pasta con mariscos salsa arrabiata en Rosatto Acapulco" 
+          },
+          { 
+            id: "pasta-ragu", 
+            title: "Pasta Ragu De Res", 
+            caption: "Papardelle con carne al ragú", 
+            price: "$350", 
+            src: "/assets/menu/pasta-Ragu-de-res-Rosatto-Acapulco.webp", 
+            alt: "Pasta Papardelle con ragú de res en Rosatto Acapulco" 
+          }
+        ],
+      },
+      {
+        tag: "postres",
+        label: "Postres & Drinks",
+        items: [
+          { 
+            id: "tiramisu", 
+            title: "Tiramisú De Café", 
+            caption: "Clásico italiano", 
+            price: "$150", 
+            src: "/assets/menu/tiramisu-de-cafe-Rosatto-Acapulco.webp", 
+            alt: "Postre Tiramisú de café en Rosatto Acapulco" 
+          },
+          { 
+            id: "red-velvet", 
+            title: "Pastel Red Velvet", 
+            caption: "Con Nutella", 
+            price: "$200", 
+            src: "/assets/menu/pastel-red-velvet-y-nutella-Rosatto-Acapulco.webp", 
+            alt: "Pastel Red Velvet con Nutella en Rosatto Acapulco" 
+          },
+          { 
+            id: "aperol", 
+            title: "Aperol Gin", 
+            caption: "Refrescante y cítrico", 
+            price: "$200", 
+            src: "/assets/menu/aperol-gin-Rosatto-Acapulco.webp", 
+            alt: "Coctel Aperol Gin bebida en Rosatto Acapulco" 
+          },
+          { 
+            id: "martini", 
+            title: "Martini De Lychee", 
+            caption: "Dulce y sofisticado", 
+            price: "$250", 
+            src: "/assets/menu/matini-de-lychee-Rosatto-Acapulco.webp", 
+            alt: "Martini de Lychee bebida preparada en Rosatto Acapulco" 
+          },
+          { 
+            id: "cava", 
+            title: "Cava de Vinos", 
+            caption: "Nuestra selección", 
+            src: "/assets/menu/cava-de-vinos-Rosatto-Acapulco.webp", 
+            alt: "Cava de vinos selección especial en Rosatto Acapulco" 
+          }
         ],
       },
     ]
   }
 };
-// --- Fin del contenido inyectado ---
-
 
 type PreviewItem = {
   id: string;
@@ -53,42 +246,15 @@ type PreviewItem = {
 type PreviewCategory = {
   tag: string;
   label: string;
-  items: PreviewItem[]; // 5 items
+  items: PreviewItem[];
 };
 
 export default function MenuPreview() {
   const content = homeContent.menuPreview as { categories?: PreviewCategory[] } | undefined;
 
-  // Fallback (¡asegúrate de que las rutas de src: sean correctas!)
-  const fallbackCategories: PreviewCategory[] = [
-    {
-      tag: "entradas",
-      label: "Entradas & Tapas",
-      items: [
-        { id: "pulpo-pesto", title: "Pulpo al pesto", caption: "A las brasas con pesto verde", price: "$$", src: "/assets/menu/signature-1.jpg", alt: "Pulpo al pesto a la parrilla" },
-        // ★★★ FIX BUILD: Corregido el typo aquí ★★★
-        { id: "spritz", title: "Brindis con spritz", caption: "Aperitivo cítrico", src: "/assets/home/hero.jpg", alt: "Brindis con spritz en mesa exterior" },
-        { id: "tagliolini-limon", title: "Tagliolini al limón", caption: "Mascarpone y limón", src: "/assets/home/hero.jpg", alt: "Tagliolini al limón con mascarpone" },
-        { id: "robalo", title: "Róbalo mediterráneo", caption: "Hierbas y aceite de oliva", src: "/assets/home/hero.jpg", alt: "Róbalo al estilo mediterráneo" },
-        { id: "cava", title: "Cava & ambiente", caption: "Interior mediterráneo", src: "/assets/home/hero.jpg", alt: "Interior mediterráneo con cava" },
-      ],
-    },
-    {
-      tag: "pastas",
-      label: "Pastas",
-      items: [
-        { id: "tagliolini-trufa", title: "Tagliolini con trufa", caption: "Carpaccio & trufa fresca", price: "$$", src: "/assets/home/hero.jpg", alt: "Tagliolini con trufa" },
-        { id: "pappardelle-ragu", title: "Pappardelle al ragú", caption: "Res a fuego lento", src: "/assets/home/hero.jpg", alt: "Pappardelle con ragú" },
-        { id: "pasta-aglio-olio", title: "Pasta Aglio Olio", caption: "Con camarón", src: "/assets/home/hero.jpg", alt: "Aglio Olio con camarón" },
-        { id: "pesto-burrata", title: "Pasta al pesto", caption: "Con burrata y almendras", src: "/assets/home/hero.jpg", alt: "Pasta al pesto con burrata" },
-        { id: "mascarpone-limon", title: "Mascarpone & limón", caption: "Toque cítrico", src: "/assets/home/hero.jpg", alt: "Tagliolini mascarpone limón" },
-      ],
-    },
-  ];
-
   const categories: PreviewCategory[] = content?.categories?.length
     ? content.categories
-    : fallbackCategories;
+    : [];
 
   const [activeTag, setActiveTag] = useState<string>(categories[0]?.tag ?? "entradas");
   const activeCategory = useMemo(
@@ -110,16 +276,25 @@ export default function MenuPreview() {
     setHeroIndex(0);
   };
 
+  if (!activeCategory) return null;
+
   return (
-    // ★ FIX ALIGN: Quitamos 'grid' y 'justify-items-center'.
-    // ★ FIX PREVIEW: Usando valor arbitrario `bg-[#0D141B]` (dl-dark)
     <section
       aria-label="Menú — vista previa"
       className="isolate bg-[#0D141B] overflow-x-hidden"
     >
-      {/* ★ FIX ALIGN: 'mx-auto' (margen automático) ahora funcionará gracias al fix en page.tsx */}
       <div className="mx-auto max-w-6xl px-[1.5rem] sm:px-[5rem] lg:px-[6rem] py-[3.5rem] md:py-[4.5rem]">
         
+        {/* === TÍTULO DE LA SECCIÓN === */}
+        <h2 className="font-display uppercase text-center text-3xl md:text-4xl tracking-wide2 text-white mb-4">
+          DESCUBRE NUESTRO MENÚ
+        </h2>
+
+        {/* === PÁRRAFO DESCRIPTIVO === */}
+        <p className="text-center text-white/90 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-sans mb-8 md:mb-12">
+          Abre el apetito con tapas y carpaccios para compartir, sigue con nuestras pastas y risottos artesanales para los amantes de lo clásico, y descubre la intensidad de los mariscos frescos preparados con la esencia del mar o alguno de nuestros cortes premium a la parrilla. Para el cierre nuestros postres italianos transformarán la cena en un recuerdo.
+        </p>
+
         {/* === Filtro de categorías === */}
         <div className="flex flex-wrap items-center justify-center gap-[0.6rem] md:gap-[0.8rem] mb-[1.75rem] md:mb-[2rem]">
           {categories.map((cat) => {
@@ -132,12 +307,15 @@ export default function MenuPreview() {
                 className={[
                   "rounded-full focus:outline-none focus-visible:ring-2",
                   "px-[1.05rem] py-[0.65rem] text-[0.98rem]",
-                  // ★ FIX PREVIEW: Valores arbitrarios para theme
-                  "transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)]", 
-                  "font-['var(--font-display)'] uppercase tracking-[0.08em]", 
+                  "transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)]",
+                  // --------------------------------------------------
+                  // FIX TYPOGRAPHY: Usamos 'font-display' en lugar de 'font-[var(--...)]'
+                  // para asegurar el fallback correcto a sans-serif si la fuente falla.
+                  // --------------------------------------------------
+                  "font-display uppercase tracking-[0.08em]", 
                   active
                     ? "bg-white text-[#0D141B] border border-white"
-                    : "bg-transparent border border-[#C8A661] text-[#C8A661] hover:scale-105", // dl-gold
+                    : "bg-transparent border border-[#C8A661] text-[#C8A661] hover:scale-105", 
                 ].join(" ")}
                 aria-pressed={active}
               >
@@ -149,12 +327,10 @@ export default function MenuPreview() {
 
         {/* === Hero slider con caption === */}
         <figure className="w-full overflow-hidden rounded-[14px]">
-          {/* Wrapper centrado */}
           <div className="relative w-full h-[56svh] md:h-[64svh] overflow-hidden">
             {activeCategory.items.map((item, i) => {
               const isActive = i === heroIndex;
               return (
-                // ★ FIX PREVIEW: Reemplazado <Image> por <img>
                 <img
                   key={item.id}
                   src={item.src}
@@ -171,7 +347,7 @@ export default function MenuPreview() {
             <button
               aria-label="Anterior"
               onClick={prev}
-              className="absolute left-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/30 hover:bg-white/50 focus:outline-none"
+              className="absolute left-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/30 hover:bg-white/50 focus:outline-none transition"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -182,7 +358,7 @@ export default function MenuPreview() {
             <button
               aria-label="Siguiente"
               onClick={next}
-              className="absolute right-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/30 hover:bg-white/50 focus:outline-none"
+              className="absolute right-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/30 hover:bg-white/50 focus:outline-none transition"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -196,9 +372,7 @@ export default function MenuPreview() {
                 <figcaption
                   className={[
                     "absolute bottom-[1.25rem] left-1/2 -translate-x-1/2",
-                    "w-[min(1100px,calc(100%-2rem))]", // ancho seguro
-                    // ★ FIX CAPTION: Opacidad aumentada a 80% (arbitrario)
-                    // ★ FIX PREVIEW: Usando `backdrop-blur-[2px]` (arbitrario)
+                    "w-[min(1100px,calc(100%-2rem))]", 
                     "rounded-[12px] border border-white/20 bg-white/80 backdrop-blur-[2px]", 
                     "py-[0.95rem] px-[1rem] md:px-[1.25rem]",
                     "shadow-[0_12px_30px_rgba(0,0,0,.20)]",
@@ -206,13 +380,14 @@ export default function MenuPreview() {
                   ].join(" ")}
                 >
                   <div className="min-w-0">
-                    <h3 className="font-medium text-[1.05rem] md:text-[1.2rem] text-[#0D141B] truncate">
+                    {/* FIX TYPOGRAPHY: 'font-display' para el título del plato */}
+                    <h3 className="font-medium text-[1.05rem] md:text-[1.2rem] text-[#0D141B] truncate font-display uppercase tracking-wide">
                       {item.title}
                     </h3>
-                    <p className="text-[0.9rem] text-[#0D141B]/80 truncate">{item.caption}</p>
+                    <p className="text-[0.9rem] text-[#0D141B]/80 truncate font-sans">{item.caption}</p>
                   </div>
                   {item.price && (
-                    <span className="text-[1rem] md:text-[1.1rem] font-medium text-[#0D141B]">
+                    <span className="text-[1rem] md:text-[1.1rem] font-medium text-[#0D141B] whitespace-nowrap font-sans">
                       {item.price}
                     </span>
                   )}
@@ -222,8 +397,8 @@ export default function MenuPreview() {
           </div>
         </figure>
 
-        {/* === Grid 5 thumbnails === */}
-        <div className="mt-[1rem] md:mt-[1.25rem] grid grid-cols-5 gap-[0.55rem] md:gap-[0.75rem]">
+        {/* === Grid de Thumbnails === */}
+        <div className="mt-[1rem] md:mt-[1.25rem] grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-[0.55rem] md:gap-[0.75rem]">
           {activeCategory.items.map((item, i) => {
             const active = i === heroIndex;
             return (
@@ -232,27 +407,37 @@ export default function MenuPreview() {
                 aria-label={`Ver ${item.title}`}
                 onClick={() => setHeroIndex(i)}
                 className={[
-                  "group relative overflow-hidden rounded-[10px] focus:outline-none transition",
+                  "group relative aspect-[4/3] overflow-hidden rounded-[10px] focus:outline-none transition",
                   active
-                    ? "ring-2 ring-white/90 shadow-[0_8px_24px_rgba(0,0,0,.35)]"
-                    : "ring-0 hover:ring-2 hover:ring-white/60",
+                    ? "ring-2 ring-white/90 shadow-[0_8px_24px_rgba(0,0,0,.35)] opacity-100"
+                    : "ring-0 hover:ring-2 hover:ring-white/60 opacity-70 hover:opacity-100",
                 ].join(" ")}
               >
-                {/* ★ FIX PREVIEW: Reemplazado <Image> por <img> */}
                 <img
                   src={item.src}
                   alt={item.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition" aria-hidden />
+                <span className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition" aria-hidden />
               </button>
             );
           })}
         </div>
+
+        {/* === BOTÓN DESCARGAR MENÚ === */}
+        <div className="mt-12 text-center">
+          <a 
+            href="https://drive.google.com/drive/folders/1vCxaNmRzdOzduJBoWtdUuHaXjwhW26sm?utm_source=sitio-rosatto&utm_medium=Menu&utm_campaign=general"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-[#C8A661] text-[#0D141B] px-8 py-3 text-sm font-medium transition hover:bg-white hover:scale-105"
+          >
+            Descargar menú completo
+          </a>
+        </div>
+
       </div>
     </section>
   );
 }
-
-

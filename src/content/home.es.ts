@@ -11,8 +11,8 @@ export const homeContent = {
     cta: "¡Te estamos esperando!",
 
     // Activos existentes en /public
-    video: "/assets/home/video-Rosatto-desktop.mp4?v=2",
-    poster: "/assets/home/hero.jpg",
+    video: "/assets/home/video-Rosatto-desktop_1.mp4?v=2",
+    poster: "/assets/home/experiencia-cena-y-brindis-en-rosatto-costa-azul.webp",
   }, // <-- COMA AÑADIDA
 
   experiencia: {
@@ -29,37 +29,37 @@ export const homeContent = {
     // REFACTOR: Movido galleryGrid DENTRO del objeto 'experiencia'
     galleryGrid: [
       { 
-        src: "/assets/gallery/corte-premium-rosatto-acapulco.jpeg", 
+        src: "/assets/gallery/corte-premium-rosatto-acapulco.webp", 
         alt: "Corte premium a la parrilla con vino tinto servido en Rosatto Acapulco.",
         width: 800,
         height: 1200
       },
       { 
-        src: "/assets/gallery/entrada-queso-fundido-y chistorra-rosatto-acapulco.jpeg", 
-        alt: "Entrada gourmet de queso fundido con chistorra al horno en Rosatto Acapulco.",
+        src: "/assets/gallery/pasta-Rosatto-Acapulco.webp", 
+        alt: "Pasta Artesanal servida en Rosatto Acapulco.",
         width: 1200,
         height: 800
       },
       { 
-        src: "/assets/gallery/tapa-jamon-serrano-rosatto-acapulco.jpeg", 
+        src: "/assets/gallery/tapa-jamon-serrano-rosatto-acapulco.webp", 
         alt: "Tapas gourmet para compartir con jamón serrano y queso derretido en Rosatto Acapulco.",
         width: 1200,
         height: 800
       },
       { 
-        src: "/assets/gallery/bartender-cocktail-mixologia-artesanal-rosatto.jpeg", 
+        src: "/assets/gallery/bartender-cocktail-mixologia-artesanal-rosatto.webp", 
         alt: "Bartender preparando un cocktail. Mixología artesanal y servicio personalizado en el bar de Rosatto.",
         width: 800,
         height: 1200
       },
       { 
-        src: "/assets/gallery/postre-de-cumpleanos-rosatto-acapulco.jpg", 
+        src: "/assets/gallery/postre-de-cumpleanos-rosatto-acapulco.webp", 
         alt: "Postre de cumpleaños decorado con flores comestibles. Celebración personalizada en Rosatto Acapulco.",
         width: 1200,
         height: 800
       },
       { 
-        src: "/assets/gallery/pasta-gratinada-rosatto.jpeg", 
+        src: "/assets/gallery/pasta-gratinada-rosatto.webp", 
         alt: "Pasta gratinada al horno con queso fundido y vino en Rosatto, restaurante mediterráneo en Acapulco.",
         width: 800,
         height: 1200

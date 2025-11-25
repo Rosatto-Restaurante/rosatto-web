@@ -41,7 +41,7 @@ export const homeContent = {
         height: 800
       },
       { 
-        src: "/assets/gallery/tapa-jamon-serrano-rosatto-acapulco.webp", 
+        src: "/assets/gallery/tapa-de-atun-Rosatto-Acapulco.jpeg", 
         alt: "Tapas gourmet para compartir con jamón serrano y queso derretido en Rosatto Acapulco.",
         width: 1200,
         height: 800
@@ -70,7 +70,7 @@ export const homeContent = {
 
   story: {
     h2: "Una joya en el corazón de Acapulco",
-    p1: "Más que un restaurante, Rosatto es una experiencia que querrás compartir. Nuestros visitantes destacan la atención amable y profesional desde que llegan, y cada bocado se encargará de recordarte por qué este lugar se ha convertido en un favorito tanto para locales como para turistas.",
+    p1: "Más que un restaurante, Rosatto es una experiencia que querrás compartir. Nuestros visitantes destacan la atención amable y profesional desde que llegan y cada bocado se encargará de recordarte por qué este lugar se ha convertido en un favorito tanto para locales como para turistas.",
     p2: "Al final de la noche, te das cuenta de que Rosatto no es solo un restaurante, es un destino, es algo que no puedes esperar para contarle a tus amigos y planear con ellos una próxima visita. Ideal para cenas especiales, celebraciones y salidas memorables entre amigas, Rosatto siempre deja buen sabor de boca.",
     ctaWhatsapp: "Reserva fácil en WhatsApp",
   }, // <-- COMA AÑADIDA

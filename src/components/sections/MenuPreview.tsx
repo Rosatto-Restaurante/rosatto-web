@@ -3,7 +3,7 @@
 
 import { useMemo, useState, useCallback } from "react";
 
-// --- Contenido del Menú ---
+// --- Contenido del Menú (Sin Precios) ---
 const homeContent = {
   menuPreview: {
     categories: [
@@ -15,7 +15,6 @@ const homeContent = {
             id: "carpaccio-res", 
             title: "Carpaccio De Res", 
             caption: "Láminas finas de res frescas", 
-            price: "$230", 
             src: "/assets/menu/carpaccio-de-Res-Rosatto-Acapulco.webp", 
             alt: "Carpaccio de res servido en Rosatto restaurante Acapulco" 
           },
@@ -23,7 +22,6 @@ const homeContent = {
             id: "fondue-queso", 
             title: "Fondue De Queso", 
             caption: "Ideal para compartir", 
-            price: "$480", 
             src: "/assets/menu/fondue-de-queso-Rosatto-Acapulco.webp", 
             alt: "Fondue de queso derretido con pan en Rosatto Acapulco" 
           },
@@ -31,7 +29,6 @@ const homeContent = {
             id: "atun-pesto", 
             title: "Atún Sellado Al Pesto", 
             caption: "Con costra de pesto fresco", 
-            price: "$420", 
             src: "/assets/menu/atun-sellado-al-pesto-Rosatto-Acapulco.webp", 
             alt: "Atún sellado al pesto plato gourmet en Rosatto Acapulco" 
           },
@@ -39,7 +36,6 @@ const homeContent = {
             id: "tempura-mar", 
             title: "Tempura Del Mar", 
             caption: "Camarón, calamar y verduras fritas", 
-            price: "$229", 
             src: "/assets/menu/tempura-de-mar-Rosatto-Acapulco.webp", 
             alt: "Tempura del mar con camarones y calamar en Rosatto Acapulco" 
           },
@@ -47,7 +43,6 @@ const homeContent = {
             id: "chistorra", 
             title: "Gratinado De Chistorra", 
             caption: "Sartén de queso con chistorra", 
-            price: "$229", 
             src: "/assets/menu/gratinado-de-chistorra-Rosatto-Acapulco.webp", 
             alt: "Queso fundido gratinado con chistorra en Rosatto Acapulco" 
           },
@@ -55,7 +50,6 @@ const homeContent = {
             id: "tapa-salmon", 
             title: "Tapa De Salmón", 
             caption: "Bocado fresco de salmón", 
-            price: "$80", 
             src: "/assets/menu/tapa_de_salmon-Rosatto-Acapulco.webp", 
             alt: "Tapa de salmón aperitivo en Rosatto Acapulco" 
           },
@@ -63,7 +57,6 @@ const homeContent = {
             id: "bolitas-queso", 
             title: "Bolitas De Queso", 
             caption: "Con flores de calabaza", 
-            price: "$160", 
             src: "/assets/menu/bolitas-de-queso-y-flores-de-calabaza.webp", 
             alt: "Bolitas de queso fritas con flor de calabaza en Rosatto Acapulco" 
           },
@@ -71,7 +64,6 @@ const homeContent = {
             id: "sopa-mariscos", 
             title: "Sopa De Mariscos", 
             caption: "Fondo de mariscos selectos", 
-            price: "$239", 
             src: "/assets/menu/sopa_De_Mariscos-Rosatto-Acapulco.webp", 
             alt: "Sopa de mariscos caliente en Rosatto Acapulco" 
           },
@@ -79,7 +71,6 @@ const homeContent = {
             id: "ensalada-frutos",
             title: "Ensalada Frutos Rojos",
             caption: "Fresca y ligera",
-            price: "$200",
             src: "/assets/menu/ensalada-de-frutos-rojos-Rosatto-Acapulco.webp",
             alt: "Ensalada fresca con frutos rojos en Rosatto Acapulco"
           }
@@ -93,7 +84,6 @@ const homeContent = {
             id: "tomahawk", 
             title: "Tomahawk", 
             caption: "Corte premium a la parrilla", 
-            price: "$1,890", 
             src: "/assets/menu/tomahawk-Rosatto-Acapulco.webp", 
             alt: "Corte de carne Tomahawk a la parrilla en Rosatto Acapulco" 
           },
@@ -101,7 +91,6 @@ const homeContent = {
             id: "pulpo-parrilla", 
             title: "Pulpo A La Parrilla", 
             caption: "Con aceitunas y aceite de olivo", 
-            price: "$690", 
             src: "/assets/menu/pulpo-a-la-parrilla-Rosatto-Acapulco.webp", 
             alt: "Pulpo a la parrilla cocina mediterránea en Rosatto Acapulco" 
           },
@@ -109,7 +98,6 @@ const homeContent = {
             id: "robalo-confitado", 
             title: "Robalo Confitado", 
             caption: "Con pimientos y papa", 
-            price: "$420", 
             src: "/assets/menu/robalo-confitado-Rosatto-Acapulco.webp", 
             alt: "Filete de robalo confitado con guarnición en Rosatto Acapulco" 
           },
@@ -117,7 +105,6 @@ const homeContent = {
             id: "ribeye", 
             title: "Cortes De Carnes", 
             caption: "Rib eye de 400g con verduras", 
-            price: "$790", 
             src: "/assets/menu/experiencia-corte-de-carnes-rosatto-acapulco.webp", 
             alt: "Corte de carne Rib Eye a la parrilla en Rosatto Acapulco" 
           },
@@ -125,7 +112,6 @@ const homeContent = {
             id: "camarones-ajo", 
             title: "Camarones Crema Ajo", 
             caption: "Clásicos al ajo cremoso", 
-            price: "$400", 
             src: "/assets/menu/camarones-a-la-crema-de-ajo-Rosatto-Acapulco.webp", 
             alt: "Camarones preparados a la crema de ajo en Rosatto Acapulco" 
           },
@@ -133,7 +119,6 @@ const homeContent = {
             id: "robalo-almendrado", 
             title: "Róbalo Almendrado", 
             caption: "Costra crujiente de almendra", 
-            price: "$420", 
             src: "/assets/menu/robalo-almendrado-Rosatto-Acapulco.webp", 
             alt: "Róbalo almendrado platillo del mar en Rosatto Acapulco" 
           }
@@ -147,7 +132,6 @@ const homeContent = {
             id: "risotto-trufa", 
             title: "Risotto De Trufa", 
             caption: "Con esencia y aceite de trufa", 
-            price: "$450", 
             src: "/assets/menu/Risotto-de-Trufa-Rosatto-Acapulco.webp", 
             alt: "Risotto de trufa con hongos y queso en Rosatto Acapulco" 
           },
@@ -155,7 +139,6 @@ const homeContent = {
             id: "risotto-callo", 
             title: "Risotto Callo de Hacha", 
             caption: "Cremoso y del mar", 
-            price: "$430", 
             src: "/assets/menu/Risotto-de-callo-de-hacha-Rosatto-Acapulco.webp", 
             alt: "Risotto con callo de hacha en Rosatto Acapulco" 
           },
@@ -163,7 +146,6 @@ const homeContent = {
             id: "pasta-panna", 
             title: "Pasta Panna Camarones", 
             caption: "Tagliatele a la crema", 
-            price: "$370", 
             src: "/assets/menu/pasta-Panna-Con-Camarones-Rosatto-Acapulco.webp", 
             alt: "Pasta Panna con camarones y queso en Rosatto Acapulco" 
           },
@@ -171,7 +153,6 @@ const homeContent = {
             id: "pasta-arrabiata", 
             title: "Pasta Mariscos Arrabiata", 
             caption: "Ligeramente picante", 
-            price: "$399", 
             src: "/assets/menu/pasta-Mariscos-Arrabiata-Rosatto-Acapulco.webp", 
             alt: "Pasta con mariscos salsa arrabiata en Rosatto Acapulco" 
           },
@@ -179,7 +160,6 @@ const homeContent = {
             id: "pasta-ragu", 
             title: "Pasta Ragu De Res", 
             caption: "Papardelle con carne al ragú", 
-            price: "$350", 
             src: "/assets/menu/pasta-Ragu-de-res-Rosatto-Acapulco.webp", 
             alt: "Pasta Papardelle con ragú de res en Rosatto Acapulco" 
           }
@@ -193,7 +173,6 @@ const homeContent = {
             id: "tiramisu", 
             title: "Tiramisú De Café", 
             caption: "Clásico italiano", 
-            price: "$150", 
             src: "/assets/menu/tiramisu-de-cafe-Rosatto-Acapulco.webp", 
             alt: "Postre Tiramisú de café en Rosatto Acapulco" 
           },
@@ -201,7 +180,6 @@ const homeContent = {
             id: "red-velvet", 
             title: "Pastel Red Velvet", 
             caption: "Con Nutella", 
-            price: "$200", 
             src: "/assets/menu/pastel-red-velvet-y-nutella-Rosatto-Acapulco.webp", 
             alt: "Pastel Red Velvet con Nutella en Rosatto Acapulco" 
           },
@@ -209,7 +187,6 @@ const homeContent = {
             id: "aperol", 
             title: "Aperol Gin", 
             caption: "Refrescante y cítrico", 
-            price: "$200", 
             src: "/assets/menu/aperol-gin-Rosatto-Acapulco.webp", 
             alt: "Coctel Aperol Gin bebida en Rosatto Acapulco" 
           },
@@ -217,7 +194,6 @@ const homeContent = {
             id: "martini", 
             title: "Martini De Lychee", 
             caption: "Dulce y sofisticado", 
-            price: "$250", 
             src: "/assets/menu/matini-de-lychee-Rosatto-Acapulco.webp", 
             alt: "Martini de Lychee bebida preparada en Rosatto Acapulco" 
           },
@@ -238,7 +214,7 @@ type PreviewItem = {
   id: string;
   title: string;
   caption?: string;
-  price?: string;
+  // PRICE REMOVED
   src: string;
   alt: string;
 };
@@ -285,17 +261,18 @@ export default function MenuPreview() {
     >
       <div className="mx-auto max-w-6xl px-[1.5rem] sm:px-[5rem] lg:px-[6rem] py-[3.5rem] md:py-[4.5rem]">
         
-        {/* === TÍTULO DE LA SECCIÓN === */}
+        {/* === TÍTULO === */}
         <h2 className="font-display uppercase text-center text-3xl md:text-4xl tracking-wide2 text-white mb-4">
           DESCUBRE NUESTRO MENÚ
         </h2>
 
-        {/* === PÁRRAFO DESCRIPTIVO === */}
+        {/* === PÁRRAFO === */}
         <p className="text-center text-white/90 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-sans mb-8 md:mb-12">
-          Abre el apetito con tapas y carpaccios para compartir, sigue con nuestras pastas y risottos artesanales para los amantes de lo clásico, y descubre la intensidad de los mariscos frescos preparados con la esencia del mar o alguno de nuestros cortes premium a la parrilla. Para el cierre nuestros postres italianos transformarán la cena en un recuerdo.
+          El menú de Rosatto es una invitación a saborear el Mediterráneo desde Acapulco.
+          Abre el apetito con tapas y carpaccios para compartir, sigue con nuestras pastas y risottos artesanales para los amantes de lo clásico, y descubre la intensidad de los mariscos frescos preparados con la esencia del mar o alguno de nuestros cortes premium a la parrilla. Para el cierre nuestros postres italianos transformarán cada comida en un recuerdo.
         </p>
 
-        {/* === Filtro de categorías === */}
+        {/* === Filtro === */}
         <div className="flex flex-wrap items-center justify-center gap-[0.6rem] md:gap-[0.8rem] mb-[1.75rem] md:mb-[2rem]">
           {categories.map((cat) => {
             const active = cat.tag === activeTag;
@@ -307,11 +284,7 @@ export default function MenuPreview() {
                 className={[
                   "rounded-full focus:outline-none focus-visible:ring-2",
                   "px-[1.05rem] py-[0.65rem] text-[0.98rem]",
-                  "transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)]",
-                  // --------------------------------------------------
-                  // FIX TYPOGRAPHY: Usamos 'font-display' en lugar de 'font-[var(--...)]'
-                  // para asegurar el fallback correcto a sans-serif si la fuente falla.
-                  // --------------------------------------------------
+                  "transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)]", 
                   "font-display uppercase tracking-[0.08em]", 
                   active
                     ? "bg-white text-[#0D141B] border border-white"
@@ -325,7 +298,7 @@ export default function MenuPreview() {
           })}
         </div>
 
-        {/* === Hero slider con caption === */}
+        {/* === Hero Slider === */}
         <figure className="w-full overflow-hidden rounded-[14px]">
           <div className="relative w-full h-[56svh] md:h-[64svh] overflow-hidden">
             {activeCategory.items.map((item, i) => {
@@ -343,7 +316,7 @@ export default function MenuPreview() {
               );
             })}
 
-            {/* Flecha izquierda */}
+            {/* Flechas */}
             <button
               aria-label="Anterior"
               onClick={prev}
@@ -354,7 +327,6 @@ export default function MenuPreview() {
               </svg>
             </button>
 
-            {/* Flecha derecha */}
             <button
               aria-label="Siguiente"
               onClick={next}
@@ -365,7 +337,7 @@ export default function MenuPreview() {
               </svg>
             </button>
 
-            {/* Caption del item activo */}
+            {/* Caption */}
             {(() => {
               const item = activeCategory.items[heroIndex];
               return (
@@ -376,28 +348,24 @@ export default function MenuPreview() {
                     "rounded-[12px] border border-white/20 bg-white/80 backdrop-blur-[2px]", 
                     "py-[0.95rem] px-[1rem] md:px-[1.25rem]",
                     "shadow-[0_12px_30px_rgba(0,0,0,.20)]",
-                    "flex items-center justify-between gap-[1rem]",
+                    // Ajustado para centrar el texto ahora que no hay precio a la derecha
+                    "flex flex-col items-center justify-center text-center",
                   ].join(" ")}
                 >
                   <div className="min-w-0">
-                    {/* FIX TYPOGRAPHY: 'font-display' para el título del plato */}
                     <h3 className="font-medium text-[1.05rem] md:text-[1.2rem] text-[#0D141B] truncate font-display uppercase tracking-wide">
                       {item.title}
                     </h3>
                     <p className="text-[0.9rem] text-[#0D141B]/80 truncate font-sans">{item.caption}</p>
                   </div>
-                  {item.price && (
-                    <span className="text-[1rem] md:text-[1.1rem] font-medium text-[#0D141B] whitespace-nowrap font-sans">
-                      {item.price}
-                    </span>
-                  )}
+                  {/* PRECIO ELIMINADO AQUÍ */}
                 </figcaption>
               );
             })()}
           </div>
         </figure>
 
-        {/* === Grid de Thumbnails === */}
+        {/* === Grid Thumbnails === */}
         <div className="mt-[1rem] md:mt-[1.25rem] grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-[0.55rem] md:gap-[0.75rem]">
           {activeCategory.items.map((item, i) => {
             const active = i === heroIndex;
@@ -425,7 +393,7 @@ export default function MenuPreview() {
           })}
         </div>
 
-        {/* === BOTÓN DESCARGAR MENÚ === */}
+        {/* === Botón Descarga === */}
         <div className="mt-12 text-center">
           <a 
             href="https://drive.google.com/drive/folders/1vCxaNmRzdOzduJBoWtdUuHaXjwhW26sm?utm_source=sitio-rosatto&utm_medium=Menu&utm_campaign=general"

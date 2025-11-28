@@ -1,25 +1,22 @@
+// src/lib/analytics.tsx
 'use client'
-import Script from 'next/script'
 
-export function GAInit() {
-  const id = process.env.NEXT_PUBLIC_GA_ID
-  if (!id) return null
-  return (
-    <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${id}`} strategy="afterInteractive" />
-      <Script id="ga4" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${id}', { anonymize_ip: true });
-        `}
-      </Script>
-    </>
-  )
+import { GoogleTagManager } from '@next/third-parties/google'
+
+export function Analytics() {
+  // Usamos tu ID específico
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WXBV4ZJ3'
+
+  return <GoogleTagManager gtmId={gtmId} />
 }
-export const track = (e: string, p: Record<string, any> = {}) => {
-  if (typeof window === 'undefined' || !(window as any).gtag) return
-  ;(window as any).gtag('event', e, p)
+
+// Utilidad segura para enviar eventos (conversiones, clicks, etc.)
+// Úsala en cualquier componente: sendGTMEvent('nombre_evento', { ...datos })
+export const sendGTMEvent = (event: string, value?: Record<string, any>) => {
+  if (typeof window !== 'undefined' && (window as any).dataLayer) {
+    (window as any).dataLayer.push({
+      event: event,
+      ...value
+    });
+  }
 }
-export const trackWhatsAppClick = (ctx?: string) => track('whatsapp_click', { context: ctx })

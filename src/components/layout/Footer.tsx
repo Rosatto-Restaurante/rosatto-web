@@ -1,22 +1,50 @@
 // src/components/layout/Footer.tsx
+
+/**
+ * @component Footer
+ * @description Pie de página con enlaces completos y tracking.
+ * * DATOS REALES RESTAURADOS:
+ * - Teléfono: +52 744 409 7491
+ * - Dirección: Cap. Vasco de Gama 295...
+ * - Redes: Links completos con UTMs originales.
+ * * FUNCIONALIDAD GTM:
+ * - Rastrea clics salientes (Social, Mapas, Reviews, Teléfono).
+ */
+
+"use client";
+
 import Link from "next/link";
+import { sendGTMEvent } from "@/lib/analytics";
 
 export default function Footer() {
+  
+  const trackClick = (type: string, label: string) => {
+    sendGTMEvent('click_footer', { type, label });
+  };
+
   return (
     <footer className="bg-dl-dark text-dl-cream">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
-        {/* Columna 1: Sede Costa Azul */}
+        {/* Columna 1: Contacto */}
         <div>
           <h4 className="font-sans tracking-wide2 uppercase text-dl-magenta text-lg mb-3">Sede Costa Azul</h4>
           <ul className="space-y-2 text-sm opacity-90">
             <li>Cap. Vasco de Gama 295, Plaza Yamaha</li>
             <li>Acapulco, Gro.</li>
-            <li><Link href="tel:+527444097491" className="underline hover:opacity-80">+52 744 409 7491</Link></li>
+            <li>
+              <Link 
+                href="tel:+527444097491" // TELÉFONO ORIGINAL
+                className="underline hover:opacity-80"
+                onClick={() => trackClick('contact', 'phone')}
+              >
+                +52 744 409 7491
+              </Link>
+            </li>
           </ul>
         </div>
         
-        {/* Columna 2: Sede Diamante */}
+        {/* Columna 2 */}
         <div>
           <h4 className="font-sans tracking-wide2 uppercase text-dl-magenta text-lg mb-3">Sede Diamante</h4>
           <ul className="space-y-2 text-sm opacity-90">
@@ -24,8 +52,7 @@ export default function Footer() {
           </ul>
         </div>
         
-    
-        {/* Columna 3: Social & Opiniones (REFACTORIZADO) */}
+        {/* Columna 3: Social & Opiniones */}
         <div>
           <h4 className="font-sans tracking-wide2 uppercase text-dl-magenta text-lg mb-3">Social</h4>
           <ul className="space-y-2 text-sm opacity-90 mb-6">
@@ -35,6 +62,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
+                onClick={() => trackClick('social', 'facebook')}
               >
                 Facebook
               </a>
@@ -45,6 +73,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
+                onClick={() => trackClick('social', 'instagram')}
               >
                 Instagram
               </a>
@@ -55,6 +84,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
+                onClick={() => trackClick('social', 'tiktok')}
               >
                 TikTok
               </a>
@@ -69,6 +99,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
+                onClick={() => trackClick('review', 'tripadvisor')}
               >
                 TripAdvisor
               </a>
@@ -79,17 +110,18 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
+                onClick={() => trackClick('review', 'opentable')}
               >
                 OpenTable
               </a>
             </li>
             <li>
-              {/* Usamos el link de Google Maps del config o Reviews como fallback */}
               <a 
-                href="https://maps.google.com/?q=Rosatto%20Acapulco" 
+                href="https://maps.app.goo.gl/WYEhL87o5nDMqrWGA" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
+                onClick={() => trackClick('map', 'google_maps')}
               >
                 Google Maps
               </a>
@@ -98,10 +130,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Barra inferior */}
       <div className="border-t border-white/10 py-6 text-center text-xs opacity-70 space-y-2">
         <p>© {new Date().getFullYear()} Rosatto</p>
-        
         <div className="space-y-1">
           <Link href="/politica-privacidad" className="block hover:text-dl-white">
             Política de privacidad

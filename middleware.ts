@@ -15,8 +15,11 @@ import createMiddleware from 'next-intl/middleware'
 
 // Configuración i18n (Español por defecto)
 const i18n = createMiddleware({
-  locales: ['es', 'en'],
-  defaultLocale: 'es'
+  // ANTES: locales: ['es', 'en'],
+  // AHORA: Solo 'es' para que /en/ algo de error 404 o redirija a /es
+  locales: ['es'], 
+  defaultLocale: 'es',
+  localePrefix: 'as-needed' // Opcional: para que la URL sea rosatto.com.mx en lugar de rosatto.com.mx/es
 })
 
 export default function middleware(request: NextRequest) {

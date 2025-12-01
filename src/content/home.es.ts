@@ -1,19 +1,26 @@
 // src/content/home.es.ts
+
+/**
+ * @file Contenido en Español
+ * @description Fuente de verdad para todos los textos del sitio.
+ * Centraliza textos de Hero, Experiencia, Historia, Menú, Eventos y Newsletter.
+ */
+
 export const homeContent = {
   hero: {
-    // SEO only (oculto visualmente desde el componente con sr-only)
+    // Texto oculto para SEO
     h1: "Rosatto: Restaurante de alta cocina mediterránea en Acapulco",
 
-    // Texto visible principal del Hero (panel navy)
+    // Título visible en el panel oscuro
     h2: "Ubicado en el corazón de la Zona Dorada desde 2024, a minutos de la Costera, Rosatto fusiona la alta cocina mediterránea con la profunda tradición y riqueza culinaria del puerto de Acapulco.",
 
-    // CTA
+    // Botón del Hero
     cta: "¡Te estamos esperando!",
 
-    // Activos existentes en /public
+    // Video y Poster (Rutas en /public)
     video: "/assets/home/video-Rosatto-desktop_1.mp4?v=2",
     poster: "/assets/home/experiencia-cena-y-brindis-en-rosatto-costa-azul.webp",
-  }, // <-- COMA AÑADIDA
+  },
 
   experiencia: {
     h2a: "Tradición y vanguardia en un ambiente refinado y de buen gusto.",
@@ -25,8 +32,7 @@ export const homeContent = {
     p3: "Luz cálida, texturas naturales y cava a la vista. La bahía se ilumina y llega tu plato favorito. Conversaciones que fluyen, servicio atento y un ritmo que invita a quedarte. Es el lugar perfecto para una cena especial en el puerto. Aquí podrás disfrutar una experiencia pensada y diseñada para los amantes de la buena mesa mientras saboreas un cocktail que se siente como una celebración en sí mismo.",
     p4: "Brinda al atardecer con un spritz; comparte pulpo al pesto, tagliolini al limón o róbalo mediterráneo. Nuestra coctelería de autor y cava de vinos harán el maridaje perfecto con tus mejores momentos.",
   
-    // ----- INICIO DE LA MODIFICACIÓN -----
-    // REFACTOR: Movido galleryGrid DENTRO del objeto 'experiencia'
+    // Imágenes para la galería tipo Masonry
     galleryGrid: [
       { 
         src: "/assets/gallery/corte-premium-rosatto-acapulco.webp", 
@@ -65,15 +71,14 @@ export const homeContent = {
         height: 1200
       }
     ]
-    // REFACTOR: La llave de 'experiencia' ahora cierra después de 'galleryGrid'
-  }, // <-- COMA AÑADIDA
+  },
 
   story: {
     h2: "Una joya en el corazón de Acapulco",
     p1: "Más que un restaurante, Rosatto es una experiencia que querrás compartir. Nuestros visitantes destacan la atención amable y profesional desde que llegan y cada bocado se encargará de recordarte por qué este lugar se ha convertido en un favorito tanto para locales como para turistas.",
     p2: "Al final de la noche, te das cuenta de que Rosatto no es solo un restaurante, es un destino, es algo que no puedes esperar para contarle a tus amigos y planear con ellos una próxima visita. Ideal para cenas especiales, celebraciones y salidas memorables entre amigas, Rosatto siempre deja buen sabor de boca.",
     ctaWhatsapp: "Reserva fácil en WhatsApp",
-  }, // <-- COMA AÑADIDA
+  },
 
   contactTeaser: {
     h2: "Estamos aquí para ayudarte",
@@ -89,7 +94,7 @@ export const homeContent = {
       ["Sábado", "1:15 p.m. – 12:00 a.m."],
     ],
     ctas: { call: "Llamar ahora", wa: "WhatsApp", maps: "Abrir en Maps" },
-  }, // <-- COMA AÑADIDA
+  },
 
   tuEvento: {
     h2: "Planea tu evento con nosotros…",
@@ -98,42 +103,218 @@ export const homeContent = {
     p3: "Con nuestras deliciosas opciones de menú, servicio excepcional y un ambiente sin igual, tus invitados tendrán una experiencia inolvidable.",
     p4: "Diseñamos experiencias a medida con menú curado, maridajes y detalles especiales. ¡Contáctanos hoy para hablar sobre tus necesidades y déjanos ayudarte a crear recuerdos que perdurarán toda la vida!",
     cta: "Reserva tu evento",
-  }, // <-- COMA AÑADIDA
+  },
 
   newsletter: {
-    p: "¿Quieres recibir nuestras actualizaciones sobre menús de temporada, promociones para tu cumpleaños, eventos, experiencias y catas en cava. Déjanos tu email aquí.",
+    p: "¿Quieres recibir nuestras actualizaciones sobre menús de temporada, promociones para tu cumpleaños, eventos, experiencias y catas en cava?",
+    // CORRECCIÓN: Agregamos 'cta1' que es la segunda parte del título en color magenta
+    cta1: "Déjanos tu email aquí.", 
     emailPlaceholder: "Email*",
     checkbox: "Acepto términos y aviso de privacidad.",
     cta: "Suscribirme",
-  }, // <-- COMA AÑADIDA
+  },
 
  menuPreview: {
     categories: [
       {
         tag: "entradas",
-        label: "Entradas & Tapas",
+        label: "Entradas",
         items: [
-          { id: "pulpo-pesto", title: "Pulpo al pesto", caption: "A las brasas con pesto verde", price: "$$", src: "/assets/menu/signature-1.jpg", alt: "Pulpo al pesto a la parrilla" },
-          { id: "spritz", title: "Brindis con spritz", caption: "Aperitivo cítrico", src: "/assets/home/hero.jpg", alt: "Brindis con spritz en mesa exterior" },
-          { id: "tagliolini-limon", title: "Tagliolini al limón", caption: "Mascarpone y limón", src: "/assets/home/hero.jpg", alt: "Tagliolini al limón con mascarpone" },
-          { id: "robalo", title: "Róbalo mediterráneo", caption: "Hierbas y aceite de oliva", src: "/assets/home/hero.jpg", alt: "Róbalo al estilo mediterráneo" },
-          { id: "cava", title: "Cava & ambiente", caption: "Interior mediterráneo", src: "/assets/home/hero.jpg", alt: "Interior mediterráneo con cava" },
+          { 
+            id: "carpaccio-res", 
+            title: "Carpaccio De Res", 
+            caption: "Láminas finas de res frescas", 
+            src: "/assets/menu/carpaccio-de-Res-Rosatto-Acapulco.webp", 
+            alt: "Carpaccio de res servido en Rosatto restaurante Acapulco" 
+          },
+          { 
+            id: "fondue-queso", 
+            title: "Fondue De Queso", 
+            caption: "Ideal para compartir", 
+            src: "/assets/menu/fondue-de-queso-Rosatto-Acapulco.webp", 
+            alt: "Fondue de queso derretido con pan en Rosatto Acapulco" 
+          },
+          { 
+            id: "atun-pesto", 
+            title: "Atún Sellado Al Pesto", 
+            caption: "Con costra de pesto fresco", 
+            src: "/assets/menu/atun-sellado-al-pesto-Rosatto-Acapulco.webp", 
+            alt: "Atún sellado al pesto plato gourmet en Rosatto Acapulco" 
+          },
+          { 
+            id: "tempura-mar", 
+            title: "Tempura Del Mar", 
+            caption: "Camarón, calamar y verduras fritas", 
+            src: "/assets/menu/tempura-de-mar-Rosatto-Acapulco.webp", 
+            alt: "Tempura del mar con camarones y calamar en Rosatto Acapulco" 
+          },
+          { 
+            id: "chistorra", 
+            title: "Gratinado De Chistorra", 
+            caption: "Sartén de queso con chistorra", 
+            src: "/assets/menu/gratinado-de-chistorra-Rosatto-Acapulco.webp", 
+            alt: "Queso fundido gratinado con chistorra en Rosatto Acapulco" 
+          },
+          { 
+            id: "tapa-salmon", 
+            title: "Tapa De Salmón", 
+            caption: "Bocado fresco de salmón", 
+            src: "/assets/menu/tapa_de_salmon-Rosatto-Acapulco.webp", 
+            alt: "Tapa de salmón aperitivo en Rosatto Acapulco" 
+          },
+          { 
+            id: "bolitas-queso", 
+            title: "Bolitas De Queso", 
+            caption: "Con flores de calabaza", 
+            src: "/assets/menu/bolitas-de-queso-y-flores-de-calabaza.webp", 
+            alt: "Bolitas de queso fritas con flor de calabaza en Rosatto Acapulco" 
+          },
+           { 
+            id: "sopa-mariscos", 
+            title: "Sopa De Mariscos", 
+            caption: "Fondo de mariscos selectos", 
+            src: "/assets/menu/sopa_De_Mariscos-Rosatto-Acapulco.webp", 
+            alt: "Sopa de mariscos caliente en Rosatto Acapulco" 
+          },
+          {
+            id: "ensalada-frutos",
+            title: "Ensalada Frutos Rojos",
+            caption: "Fresca y ligera",
+            src: "/assets/menu/ensalada-de-frutos-rojos-Rosatto-Acapulco.webp",
+            alt: "Ensalada fresca con frutos rojos en Rosatto Acapulco"
+          }
+        ],
+      },
+      {
+        tag: "fuertes",
+        label: "Platos Fuertes",
+        items: [
+          { 
+            id: "tomahawk", 
+            title: "Tomahawk", 
+            caption: "Corte premium a la parrilla", 
+            src: "/assets/menu/tomahawk-Rosatto-Acapulco.webp", 
+            alt: "Corte de carne Tomahawk a la parrilla en Rosatto Acapulco" 
+          },
+          { 
+            id: "pulpo-parrilla", 
+            title: "Pulpo A La Parrilla", 
+            caption: "Con aceitunas y aceite de olivo", 
+            src: "/assets/menu/pulpo-a-la-parrilla-Rosatto-Acapulco.webp", 
+            alt: "Pulpo a la parrilla cocina mediterránea en Rosatto Acapulco" 
+          },
+           { 
+            id: "robalo-confitado", 
+            title: "Robalo Confitado", 
+            caption: "Con pimientos y papa", 
+            src: "/assets/menu/robalo-confitado-Rosatto-Acapulco.webp", 
+            alt: "Filete de robalo confitado con guarnición en Rosatto Acapulco" 
+          },
+          { 
+            id: "ribeye", 
+            title: "Cortes De Carnes", 
+            caption: "Rib eye de 400g con verduras", 
+            src: "/assets/menu/experiencia-corte-de-carnes-rosatto-acapulco.webp", 
+            alt: "Corte de carne Rib Eye a la parrilla en Rosatto Acapulco" 
+          },
+          { 
+            id: "camarones-ajo", 
+            title: "Camarones Crema Ajo", 
+            caption: "Clásicos al ajo cremoso", 
+            src: "/assets/menu/camarones-a-la-crema-de-ajo-Rosatto-Acapulco.webp", 
+            alt: "Camarones preparados a la crema de ajo en Rosatto Acapulco" 
+          },
+          { 
+            id: "robalo-almendrado", 
+            title: "Róbalo Almendrado", 
+            caption: "Costra crujiente de almendra", 
+            src: "/assets/menu/robalo-almendrado-Rosatto-Acapulco.webp", 
+            alt: "Róbalo almendrado platillo del mar en Rosatto Acapulco" 
+          }
         ],
       },
       {
         tag: "pastas",
-        label: "Pastas",
+        label: "Pastas & Risottos",
         items: [
-          { id: "tagliolini-trufa", title: "Tagliolini con trufa", caption: "Carpaccio & trufa fresca", price: "$$", src: "/assets/home/hero.jpg", alt: "Tagliolini con trufa" },
-          { id: "pappardelle-ragu", title: "Pappardelle al ragú", caption: "Res a fuego lento", src: "/assets/home/hero.jpg", alt: "Pappardelle con ragú" },
-          { id: "pasta-aglio-olio", title: "Pasta Aglio Olio", caption: "Con camarón", src: "/assets/home/hero.jpg", alt: "Aglio Olio con camarón" },
-          { id: "pesto-burrata", title: "Pasta al pesto", caption: "Con burrata y almendras", src: "/assets/home/hero.jpg", alt: "Pasta al pesto con burrata" },
-          { id: "mascarpone-limon", title: "Mascarpone & limón", caption: "Toque cítrico", src: "/assets/home/hero.jpg", alt: "Tagliolini mascarpone limón" },
+          { 
+            id: "risotto-trufa", 
+            title: "Risotto De Trufa", 
+            caption: "Con esencia y aceite de trufa", 
+            src: "/assets/menu/Risotto-de-Trufa-Rosatto-Acapulco.webp", 
+            alt: "Risotto de trufa con hongos y queso en Rosatto Acapulco" 
+          },
+          { 
+            id: "risotto-callo", 
+            title: "Risotto Callo de Hacha", 
+            caption: "Cremoso y del mar", 
+            src: "/assets/menu/Risotto-de-callo-de-hacha-Rosatto-Acapulco.webp", 
+            alt: "Risotto con callo de hacha en Rosatto Acapulco" 
+          },
+          { 
+            id: "pasta-panna", 
+            title: "Pasta Panna Camarones", 
+            caption: "Tagliatele a la crema", 
+            src: "/assets/menu/pasta-Panna-Con-Camarones-Rosatto-Acapulco.webp", 
+            alt: "Pasta Panna con camarones y queso en Rosatto Acapulco" 
+          },
+          { 
+            id: "pasta-arrabiata", 
+            title: "Pasta Mariscos Arrabiata", 
+            caption: "Ligeramente picante", 
+            src: "/assets/menu/pasta-Mariscos-Arrabiata-Rosatto-Acapulco.webp", 
+            alt: "Pasta con mariscos salsa arrabiata en Rosatto Acapulco" 
+          },
+          { 
+            id: "pasta-ragu", 
+            title: "Pasta Ragu De Res", 
+            caption: "Papardelle con carne al ragú", 
+            src: "/assets/menu/pasta-Ragu-de-res-Rosatto-Acapulco.webp", 
+            alt: "Pasta Papardelle con ragú de res en Rosatto Acapulco" 
+          }
         ],
       },
-      // Suma más categorías a partir de 03_Arquitectura_onpage:
-      // "risottos", "pescados", "carnes", "cortes", "guarniciones", "cocteleria", "postres"
+      {
+        tag: "postres",
+        label: "Postres & Drinks",
+        items: [
+          { 
+            id: "tiramisu", 
+            title: "Tiramisú De Café", 
+            caption: "Clásico italiano", 
+            src: "/assets/menu/tiramisu-de-cafe-Rosatto-Acapulco.webp", 
+            alt: "Postre Tiramisú de café en Rosatto Acapulco" 
+          },
+          { 
+            id: "red-velvet", 
+            title: "Pastel Red Velvet", 
+            caption: "Con Nutella", 
+            src: "/assets/menu/pastel-red-velvet-y-nutella-Rosatto-Acapulco.webp", 
+            alt: "Pastel Red Velvet con Nutella en Rosatto Acapulco" 
+          },
+          { 
+            id: "aperol", 
+            title: "Aperol Gin", 
+            caption: "Refrescante y cítrico", 
+            src: "/assets/menu/aperol-gin-Rosatto-Acapulco.webp", 
+            alt: "Coctel Aperol Gin bebida en Rosatto Acapulco" 
+          },
+          { 
+            id: "martini", 
+            title: "Martini De Lychee", 
+            caption: "Dulce y sofisticado", 
+            src: "/assets/menu/matini-de-lychee-Rosatto-Acapulco.webp", 
+            alt: "Martini de Lychee bebida preparada en Rosatto Acapulco" 
+          },
+          { 
+            id: "cava", 
+            title: "Cava de Vinos", 
+            caption: "Nuestra selección", 
+            src: "/assets/menu/cava-de-vinos-Rosatto-Acapulco.webp", 
+            alt: "Cava de vinos selección especial en Rosatto Acapulco" 
+          }
+        ],
+      },
     ]
   }
-  // REFACTOR: Eliminada la llave '}' y la coma ',' fuera de lugar que causaban el error
 };

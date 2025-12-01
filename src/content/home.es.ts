@@ -101,12 +101,12 @@ export const homeContent = {
     p1: "¿Estás buscando el lugar ideal para celebrar tu próximo evento? ¡No busques más! Nuestro restaurante ofrece el escenario perfecto para todas tus ocasiones especiales.",
     p2: "Ya sea un cumpleaños, una cena de aniversario, cena para un grupo o cualquier otro evento, nuestro equipo comprometido está aquí para garantizar que todo salga a la perfección de principio a fin.",
     p3: "Con nuestras deliciosas opciones de menú, servicio excepcional y un ambiente sin igual, tus invitados tendrán una experiencia inolvidable.",
-    p4: "Diseñamos experiencias a medida con menú curado, maridajes y detalles especiales. ¡Contáctanos hoy para hablar sobre tus necesidades y déjanos ayudarte a crear recuerdos que perdurarán toda la vida!",
+    p4: "Diseñamos experiencias a la medida con un menú degustación o de tiempos y detalles especiales. ¡Contáctanos hoy para hablar sobre tus necesidades y déjanos ayudarte a crear recuerdos que perdurarán toda la vida!",
     cta: "Reserva tu evento",
   },
 
   newsletter: {
-    p: "¿Quieres recibir nuestras actualizaciones sobre menús de temporada, promociones para tu cumpleaños, eventos, experiencias y catas en cava?",
+    p: "¿Quieres recibir nuestras actualizaciones sobre menús de temporada, promociones para tu cumpleaños, eventos y experiencias?",
     // CORRECCIÓN: Agregamos 'cta1' que es la segunda parte del título en color magenta
     cta1: "Déjanos tu email aquí.", 
     emailPlaceholder: "Email*",

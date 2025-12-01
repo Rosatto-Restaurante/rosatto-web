@@ -85,7 +85,7 @@ export default function Hero() {
                 {cta && (
                   <div className="mt-6 md:mt-8 text-center">
                     <Link 
-                      href="https://bit.ly/3JR561v" // ENLACE ORIGINAL
+                      href="https://wa.link/1ljf0c?utm_source=sitio-rosatto&utm_medium=hero&utm_campaign=general" // ENLACE ORIGINAL
                       target="_blank"
                       className="hero-cta"
                       // Tracking de GTM

@@ -88,7 +88,7 @@ export default function Header() {
             {/* CTA Desktop */}
             <div className="hidden md:block">
               <Link
-                href="https://bit.ly/3WIt1Di" // ENLACE ORIGINAL
+                href="https://wa.link/1ljf0c?utm_source=sitio-rosatto&utm_medium=header&utm_campaign=general" // ENLACE ORIGINAL
                 className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-medium transition bg-dl-dark text-dl-white hover:bg-dl-black"
                 onClick={() => sendGTMEvent('conversion_intent', { 
                   location: 'header_desktop', 

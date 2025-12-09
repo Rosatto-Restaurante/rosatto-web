@@ -109,7 +109,7 @@ export default function ContactPanel() {
         {/* Columna Imagen */}
         <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-auto order-2">
           <Image
-            src="/assets/home/rosatto-terraza-bienvenida.webp"
+            src="/assets/home/terraza-Bienvenida-Rosatto.webp"
             alt="Fachada y acceso principal del restaurante Rosatto"
             fill
             className="object-cover"

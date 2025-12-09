@@ -320,7 +320,7 @@ export default function MenuPreview() {
             <button
               aria-label="Anterior"
               onClick={prev}
-              className="absolute left-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/30 hover:bg-white/50 focus:outline-none transition"
+              className="absolute left-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/65 hover:bg-white/70 focus:outline-none transition"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -330,7 +330,7 @@ export default function MenuPreview() {
             <button
               aria-label="Siguiente"
               onClick={next}
-              className="absolute right-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/30 hover:bg-white/50 focus:outline-none transition"
+              className="absolute right-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/65 hover:bg-white/70 focus:outline-none transition"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -345,7 +345,7 @@ export default function MenuPreview() {
                   className={[
                     "absolute bottom-[1.25rem] left-1/2 -translate-x-1/2",
                     "w-[min(1100px,calc(100%-2rem))]", 
-                    "rounded-[12px] border border-white/20 bg-white/80 backdrop-blur-[2px]", 
+                    "rounded-[12px] border border-white/20 bg-white/45 backdrop-blur-[2px]", 
                     "py-[0.95rem] px-[1rem] md:px-[1.25rem]",
                     "shadow-[0_12px_30px_rgba(0,0,0,.20)]",
                     // Ajustado para centrar el texto ahora que no hay precio a la derecha
@@ -353,10 +353,10 @@ export default function MenuPreview() {
                   ].join(" ")}
                 >
                   <div className="min-w-0">
-                    <h3 className="font-medium text-[1.05rem] md:text-[1.2rem] text-[#0D141B] truncate font-display uppercase tracking-wide">
+                    <h3 className="font-medium text-[1.5rem] md:text-[1.2rem] text-[#0D141B] truncate font-display uppercase tracking-wide">
                       {item.title}
                     </h3>
-                    <p className="text-[0.9rem] text-[#0D141B]/80 truncate font-sans">{item.caption}</p>
+                    <p className="text-[1rem] text-[#0D141B]/80 truncate font-sans">{item.caption}</p>
                   </div>
                   {/* PRECIO ELIMINADO AQUÍ */}
                 </figcaption>

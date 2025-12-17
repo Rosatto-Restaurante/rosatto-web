@@ -1,31 +1,15 @@
 // src/components/layout/Header.tsx
 
-/**
- * @component Header
- * @description Navegación principal del sitio.
- * * DATOS REALES RESTAURADOS:
- * - Enlace de reserva: https://bit.ly/3WIt1Di (Diferente al del Hero)
- * - Menú: Menú, Reservas, Contacto
- * * FUNCIONALIDAD GTM:
- * - Rastrea clics en "Reservar" diferenciando si fue en Desktop o Mobile.
- */
+// src/components/layout/Header.tsx
 
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { sendGTMEvent } from "@/lib/analytics"; // Tracking
 
-const NAV = [
-  { href: "/menu", label: "Menú" },
-  { href: "/booking", label: "Reservas" },
-  { href: "/contact", label: "Contacto" },
-];
-
 export default function Header() {
-  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -51,6 +35,7 @@ export default function Header() {
       >
         <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex h-full items-center justify-between" aria-label="Primary">
+            {/* LOGO */}
             <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src="/assets/brand/Logo-Rosatto-horizontal_blanco.svg"
@@ -62,34 +47,13 @@ export default function Header() {
               />
             </Link>
 
-            {/* Navegación Desktop */}
-            <ul className="hidden md:flex items-center gap-7">
-              {NAV.map((item) => {
-                const active = pathname === item.href;
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      aria-current={active ? "page" : undefined}
-                      className={[
-                        "link-gold font-display tracking-wide2 text-sm",
-                        active
-                          ? "text-dl-white"
-                          : "text-dl-cream/90 hover:text-dl-white",
-                      ].join(" ")}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-
-            {/* CTA Desktop */}
+            {/* CTA Desktop (Botón Reservar) */}
             <div className="hidden md:block">
               <Link
-                href="https://wa.link/1ljf0c?utm_source=sitio-rosatto&utm_medium=header&utm_campaign=general" // ENLACE ORIGINAL
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-medium transition bg-dl-dark text-dl-white hover:bg-dl-black"
+                href="https://wa.link/1ljf0c?utm_source=sitio-rosattoDesktop&utm_medium=header&utm_campaign=general"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-medium transition bg-dl-dark text-dl-white hover:bg-dl-black border border-dl-gold/20"
                 onClick={() => sendGTMEvent('conversion_intent', { 
                   location: 'header_desktop', 
                   type: 'reservation_click' 
@@ -99,11 +63,13 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* CTA Mobile */}
+            {/* CTA Mobile (Botón Reservar) */}
             <div className="md:hidden">
               <Link
-                href="https://bit.ly/3WIt1Di" // ENLACE ORIGINAL
-                className="inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-medium transition bg-dl-magenta text-dl-white hover:bg-dl-black"
+                href="https://wa.link/1ljf0c?utm_source=sitio-rosattoMobile&utm_medium=header&utm_campaign=general"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-medium transition bg-dl-magenta text-dl-white hover:bg-dl-black"
                 onClick={() => sendGTMEvent('conversion_intent', { 
                   location: 'header_mobile', 
                   type: 'reservation_click' 

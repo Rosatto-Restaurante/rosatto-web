@@ -13,7 +13,7 @@
 
 "use client";
 
-// import Image from "next/image"; // <--- Ya no necesitamos Image
+import Image from "next/image"; // <--- Importamos Image nuevamente para el logo
 import Link from "next/link";
 import { homeContent } from "@/content/home.es";
 import { sendGTMEvent } from "@/lib/analytics";
@@ -21,7 +21,6 @@ import { sendGTMEvent } from "@/lib/analytics";
 export default function ContactPanel() {
   const c = homeContent.contactTeaser;
   
-  // ENLACES ORIGINALES
   const waLink = "https://wa.link/1ljf0c"; 
   const phoneLink = `tel:${c.phone.replace(/[^+\d]/g, "")}`;
 
@@ -33,7 +32,7 @@ export default function ContactPanel() {
     <section className="bg-dl-dark text-dl-cream w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-[600px]">
         
-        {/* Columna Texto */}
+        {/* --- Columna Texto (Izquierda) --- */}
         <div className="flex flex-col justify-center px-6 py-16 md:p-16 lg:p-24 order-1">
           <h2 className="font-display uppercase text-3xl md:text-4xl tracking-wide2 text-white">
             {c.h2}
@@ -106,20 +105,30 @@ export default function ContactPanel() {
           </div>
         </div>
         
-        {/* Columna Video (Reemplaza a Columna Imagen) */}
-        {/* Conservamos aspect-[9/16] para móvil y clases de layout */}
+        {/* --- Columna Video (Derecha) --- */}
         <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-auto order-2 bg-black overflow-hidden">
+          {/* 1. Video de fondo */}
           <video
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-80" // opacity-80 para oscurecerlo levemente y que resalte el logo
             autoPlay
             muted
             loop
             playsInline
-            // Opcional: poster="/assets/home/terraza-Bienvenida-Rosatto.webp"
           >
             <source src="/assets/home/Rosatto-Acapulco-Restaurante.mp4" type="video/mp4" />
             Tu navegador no soporta el tag de video.
           </video>
+
+          {/* LOGOTIPO CENTRADO */}
+          <div className="absolute inset-0 flex items-center justify-center p-8 z-10 pointer-events-none">
+            <Image
+              src="/assets/brand/Logo-Rosatto-horizontal_blanco.svg"
+              alt="Logo Rosatto Acapulco"
+              width={300}
+              height={100}
+              className="w-3/4 max-w-[280px] md:max-w-[340px] h-auto object-contain drop-shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </section>

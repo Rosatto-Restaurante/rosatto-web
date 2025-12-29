@@ -2,6 +2,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
+import PromoPopup from "@/components/ui/PromoPopup";
 import Hero from "@/components/sections/Hero";
 import MenuPreview from "@/components/sections/MenuPreview";
 import StoryPanel from "@/components/sections/StoryPanel";
@@ -59,7 +60,6 @@ export default function Home() {
         "closes": "22:00"
       }
     ],
-    "menu": "https://rosatto.com.mx/menu",
     "acceptsReservations": "True"
   };
 
@@ -76,6 +76,7 @@ export default function Home() {
         <ContactPanel />
         <TuEvento/>
         <Newsletter />
+        <PromoPopup />
       </main>
       <Footer />
       <WhatsAppCTA />

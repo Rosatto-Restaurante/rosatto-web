@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { X } from "lucide-react"; // Usamos la librería de iconos que ya tienes instalada
+import { X } from "lucide-react";
 
 export default function PromoPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,9 +17,8 @@ export default function PromoPopup() {
       setIsVisible(true);
     }, 5000);
 
-    // 2. TRIGGER POR SCROLL (Pasar el header)
+    // 2. TRIGGER POR SCROLL (Pasar el header aprox 120px)
     const handleScroll = () => {
-      // Si el usuario baja más de 120px y el popup no se ha cerrado ni mostrado aún
       if (window.scrollY > 120) {
         setIsVisible(true);
       }
@@ -36,10 +35,9 @@ export default function PromoPopup() {
 
   const closePopup = () => {
     setIsVisible(false);
-    setHasClosed(true); // Marca como cerrado para que no vuelva a salir en esta carga
+    setHasClosed(true);
   };
 
-  // Si no es visible, no renderizamos nada
   if (!isVisible || hasClosed) return null;
 
   return (
@@ -47,9 +45,10 @@ export default function PromoPopup() {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 transition-opacity duration-300">
       
       {/* Contenedor del Modal */}
-      <div className="relative w-full max-w-lg bg-dl-white rounded-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+      {/* CAMBIO 1: max-w-md para que si es vertical no se vea gigante en desktop */}
+      <div className="relative w-full max-w-md bg-dl-white rounded-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
         
-        {/* Botón de Cerrar (Esquina superior derecha) */}
+        {/* Botón de Cerrar */}
         <button
           onClick={closePopup}
           className="absolute top-3 right-3 z-10 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full transition-colors"
@@ -59,24 +58,21 @@ export default function PromoPopup() {
         </button>
 
         {/* Imagen de la Promoción */}
-        {/* Asegúrate de subir tu imagen a esta ruta */}
-        <div className="relative aspect-[4/5] md:aspect-square w-full">
+        {/* CAMBIO 2: Quitamos 'aspect', 'fill' y 'object-cover'. 
+           Usamos w-full h-auto para que la altura sea natural según la imagen. */}
+        <div className="w-full">
           <Image
-            src="/assets/home/Menu-trufa-Rosatto.webp" 
+            src="/assets/home/Menu-trufa-Rosatto.png" 
             alt="Promoción del mes Rosatto"
-            fill
-            className="object-cover"
+            // Estos props permiten que Next.js maneje la imagen responsive respetando su ratio original
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto" 
             priority
           />
         </div>
 
-        {/* (Opcional) Pie de foto o botón de acción extra */}
-        {/* <div className="p-4 text-center bg-dl-dark">
-          <button onClick={closePopup} className="text-dl-gold underline text-sm uppercase tracking-wider">
-            Cerrar y ver el sitio
-          </button>
-        </div> 
-        */}
       </div>
     </div>
   );

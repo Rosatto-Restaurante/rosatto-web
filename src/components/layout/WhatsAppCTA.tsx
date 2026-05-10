@@ -14,7 +14,7 @@ export default function WhatsAppCTA() {
 
   return (
     <a
-      href="https://wa.link/1ljf0c?utm_source=sitio-rosatto&utm_medium=WhatsAppCTA&utm_campaign=general"
+      href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20reservar%20en%20Rosatto%20para%20hoy%2010%20de%20mayo.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"

@@ -14,7 +14,7 @@ export default function BookingPage() {
           </p>
           <div className="mt-6 flex gap-3">
             <a
-              href="https://api.whatsapp.com/send?phone=+527444097491&text=Hola%20quiero%20reservar%20en%20Rosatto"
+              href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20reservar%20en%20Rosatto%20para%20hoy%2010%20de%20mayo.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F"
               className="rounded-pill bg-dl.magenta text-white px-6 py-3"
             >
               Reservar por WhatsApp

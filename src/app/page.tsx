@@ -2,7 +2,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
-import PromoPopup from "@/components/ui/PromoPopup";
+// import PromoPopup from "@/components/ui/PromoPopup";
 import Hero from "@/components/sections/Hero";
 import MenuPreview from "@/components/sections/MenuPreview";
 import StoryPanel from "@/components/sections/StoryPanel";
@@ -35,7 +35,7 @@ export default function Home() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 16.85148, 
+      "latitude": 16.85148,
       "longitude": -99.84984
     },
     "servesCuisine": "Mediterránea",
@@ -74,9 +74,9 @@ export default function Home() {
         <MenuPreview />
         <Reviews />
         <ContactPanel />
-        <TuEvento/>
+        <TuEvento />
         <Newsletter />
-        <PromoPopup />
+        {/* <PromoPopup /> */}
       </main>
       <Footer />
       <WhatsAppCTA />

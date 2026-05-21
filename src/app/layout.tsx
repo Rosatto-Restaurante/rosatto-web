@@ -4,6 +4,7 @@ import { display, sans } from "./fonts";
 import Cursor from "@/components/ui/Cursor";
 import { Analytics } from "@/lib/analytics"; // <--- IMPORTANTE
 import ScrollRevealProvider from "@/components/ui/ScrollRevealProvider";
+import SplashScreen from "@/components/ui/SplashScreen";
 
 export const metadata = { title: "Rosatto", description: "Restaurante Rosatto – Acapulco" };
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Analytics />
       
       <body className={`${display.variable} ${sans.variable} font-sans bg-dl-cream text-dl-gray antialiased overflow-x-hidden`}>
+        <SplashScreen />
         <Cursor />
         <ScrollRevealProvider />
         {children}

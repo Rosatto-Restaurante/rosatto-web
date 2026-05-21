@@ -6,7 +6,7 @@ export default function MenuPage() {
   return (
     <>
       <Header />
-      <main className="bg-dl.cream">
+      <main className="bg-dl-cream">
         <section className="max-w-6xl mx-auto px-4 py-section md:py-section-lg">
           <Heading as="h1">Menú</Heading>
           <p className="mt-3 leading-copy">

@@ -32,14 +32,14 @@ export default function Newsletter() {
       <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-[1fr,420px] gap-12 md:gap-16 items-center">
         
         <div>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight tracking-wide2">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight tracking-wide2 reveal-title-simple">
             <span className="text-dl-cream">{c.p}</span>
             <br />
             <span className="text-dl-magenta">{c.cta1}</span>
           </h2>
         </div>
 
-        <form className="grid gap-4 text-sm" onSubmit={handleSubmit}>
+        <form className="grid gap-4 text-sm reveal-text" onSubmit={handleSubmit}>
           <label className="grid gap-2">
             <span className="sr-only">Email</span>
             <input

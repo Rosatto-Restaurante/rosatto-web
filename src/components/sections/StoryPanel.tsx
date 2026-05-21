@@ -3,8 +3,9 @@
 // ★ tipografía centrada + H2 en MAYÚSCULAS, imagen después del segundo párrafo.
 
 import Link from "next/link";
-import Image from "next/image";
 import { homeContent } from "@/content/home.es";
+import RevealTitle from "@/components/ui/RevealTitle";
+import ParallaxImage from "@/components/ui/ParallaxImage";
 
 export default function StoryPanel() {
   const xp = homeContent.experiencia;
@@ -18,7 +19,8 @@ export default function StoryPanel() {
         {/* Panel claro con padding propio (aquí es donde SÍ verás el cambio) ★ */}
         <div>
           {/* H2 display centrado y en MAYÚSCULAS ★ */}
-          <h2
+          <RevealTitle
+            text={xp.h2a}
             className={[
               "font-display uppercase text-center text-dl-dark",
               // REFACTOR: 'tracking-[.20rem]' (arbitrario) -> 'tracking-ultra' (de tu config).
@@ -26,15 +28,13 @@ export default function StoryPanel() {
               // REFACTOR: 'text-[2.3rem] md:text-[2.6rem] leading-[1]' (arbitrario) -> utilidades estándar.
               "text-4xl md:text-5xl leading-none",
             ].join(" ")}
-          >
-            {xp.h2a}
-          </h2>
+          />
 
           {/* Párrafos 1–2 centrados con ancho de lectura cómodo */}
           {/* REFACTOR: 'text-[1.05rem]' (arbitrario) -> 'text-base'. 'space-y-4' ya estaba (¡bien!). */}
           <div className="mt-6 md:mt-7 space-y-4 mx-auto max-w-3xl text-center text-base leading-relaxed">
-            <p>{xp.p1}</p>
-            <p>{xp.p2}</p>
+            <p className="reveal-text">{xp.p1}</p>
+            <p className="reveal-text">{xp.p2}</p>
           </div>
         </div>
       </div>
@@ -42,16 +42,15 @@ export default function StoryPanel() {
           Sube el archivo a: /public/assets/home/bahia-de-acapulco.jpg */}
       {/* REFACTOR: 'mt-[0rem]' (arbitrario) -> 'mt-0'. */}
       <div className="mt-0 md:mt-10">
-        <div className="w-full h-auto ">
-          <Image
-            src="/assets/home/bahia-de-acapulco.jpg"
-            alt="Bahía de Acapulco"
-            width={1600}
-            height={900}
-            className="w-full h-auto"
-            priority={false}
-          />
-        </div>
+        <ParallaxImage
+          src="/assets/home/bahia-de-acapulco.jpg"
+          alt="Bahía de Acapulco"
+          fill
+          sizes="100vw"
+          containerClassName="w-full h-[35svh] sm:h-[45vh] md:h-[65vh]"
+          priority={false}
+          speed={0.15}
+        />
       </div>
     </section>
   );

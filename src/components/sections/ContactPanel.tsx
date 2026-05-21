@@ -34,14 +34,14 @@ export default function ContactPanel() {
         
         {/* --- Columna Texto (Izquierda) --- */}
         <div className="flex flex-col justify-center px-6 py-16 md:p-16 lg:p-24 order-1">
-          <h2 className="font-display uppercase text-3xl md:text-4xl tracking-wide2 text-white">
+          <h2 className="font-display uppercase text-3xl md:text-4xl tracking-wide2 text-white reveal-title-simple">
             {c.h2}
           </h2>
-          <p className="mt-4 text-base leading-relaxed opacity-90 max-w-md">
+          <p className="mt-4 text-base leading-relaxed opacity-90 max-w-md reveal-text">
             {c.p}
           </p>
 
-          <div className="mt-10 space-y-8">
+          <div className="mt-10 space-y-8 reveal-text">
             {/* Horarios */}
             <div>
               <h3 className="font-display text-lg tracking-ultra uppercase text-dl-gold mb-2">

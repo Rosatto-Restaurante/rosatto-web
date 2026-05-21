@@ -1,0 +1,242 @@
+{
+  "/Users/Pepe/Documents/GitHub/rosatto-web/middleware.ts": {
+    "mtime": 1779255092.5849938,
+    "ast_hash": "744facea4638ae5504e95e5335a8ef91",
+    "semantic_hash": "744facea4638ae5504e95e5335a8ef91"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/tailwind.config.js": {
+    "mtime": 1779255098.7869267,
+    "ast_hash": "ccea48e894c58da10f6d3c83e5394b76",
+    "semantic_hash": "ccea48e894c58da10f6d3c83e5394b76"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/next.config.js": {
+    "mtime": 1779255092.5853195,
+    "ast_hash": "0ed095acd625c2c13f5055951472cb8b",
+    "semantic_hash": "0ed095acd625c2c13f5055951472cb8b"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/next-env.d.ts": {
+    "mtime": 1778422587.6720111,
+    "ast_hash": "b5ed9dd8b4c5ba8e5ab8e6a379c15838",
+    "semantic_hash": "b5ed9dd8b4c5ba8e5ab8e6a379c15838"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/.graphify_detect.sh": {
+    "mtime": 1779255914.2474072,
+    "ast_hash": "2f755e85dfa2ba3b018f13906adc21f4",
+    "semantic_hash": "2f755e85dfa2ba3b018f13906adc21f4"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/package.json": {
+    "mtime": 1779255092.598796,
+    "ast_hash": "2450bbf005983b7279eb77ad73c869fd",
+    "semantic_hash": "2450bbf005983b7279eb77ad73c869fd"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/tsconfig.json": {
+    "mtime": 1779255098.7871902,
+    "ast_hash": "0cf97a81150d3b8904f285780896980d",
+    "semantic_hash": "0cf97a81150d3b8904f285780896980d"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/.graphify_setup.sh": {
+    "mtime": 1779255862.2270312,
+    "ast_hash": "75fc4e3f66b14fb0c63b5e7219adb1be",
+    "semantic_hash": "75fc4e3f66b14fb0c63b5e7219adb1be"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/postcss.config.js": {
+    "mtime": 1779255092.5990832,
+    "ast_hash": "cd8a7925ce0878ba0dbdfe58d1f614dc",
+    "semantic_hash": "cd8a7925ce0878ba0dbdfe58d1f614dc"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/eslint.config.mjs": {
+    "mtime": 1779255092.5843878,
+    "ast_hash": "f1e80e839db34357a0e228efe227e759",
+    "semantic_hash": "f1e80e839db34357a0e228efe227e759"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/.claude/settings.json": {
+    "mtime": 1779255496.8138943,
+    "ast_hash": "87f0d903477984d0587a02f8fe185263",
+    "semantic_hash": "87f0d903477984d0587a02f8fe185263"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/fonts.ts": {
+    "mtime": 1779255098.7243183,
+    "ast_hash": "4aae2790f6af8cc721999fc5bdc9c46a",
+    "semantic_hash": "4aae2790f6af8cc721999fc5bdc9c46a"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/sitemap.ts": {
+    "mtime": 1779255098.7350142,
+    "ast_hash": "1646af622fba73656a93ffb9283dcae9",
+    "semantic_hash": "1646af622fba73656a93ffb9283dcae9"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/layout.tsx": {
+    "mtime": 1779255098.7334473,
+    "ast_hash": "5391847cfbd72bf3b41ea5c0454d2f5e",
+    "semantic_hash": "5391847cfbd72bf3b41ea5c0454d2f5e"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/page.tsx": {
+    "mtime": 1779255098.734134,
+    "ast_hash": "42fa20ca4ce1acb80160555e75ed6aa4",
+    "semantic_hash": "42fa20ca4ce1acb80160555e75ed6aa4"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/booking/page.tsx": {
+    "mtime": 1779255098.7239342,
+    "ast_hash": "80d3a3210e51c1748e5131d9182eb484",
+    "semantic_hash": "80d3a3210e51c1748e5131d9182eb484"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/menu/page.tsx": {
+    "mtime": 1779255098.7338555,
+    "ast_hash": "aa0e5f39bea434e49ce872a17eb404cb",
+    "semantic_hash": "aa0e5f39bea434e49ce872a17eb404cb"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/app/robots.txt/route.ts": {
+    "mtime": 1779255098.7346616,
+    "ast_hash": "11b37761f06bc2d47a5e109a590e8c17",
+    "semantic_hash": "11b37761f06bc2d47a5e109a590e8c17"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/config/app.ts": {
+    "mtime": 1779255098.7832294,
+    "ast_hash": "c2b5e765765e99369cfe277cbb0c0559",
+    "semantic_hash": "c2b5e765765e99369cfe277cbb0c0559"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/content/home.es.ts": {
+    "mtime": 1779255098.7837934,
+    "ast_hash": "9afed8dfc98f43e341a0565b44d78686",
+    "semantic_hash": "9afed8dfc98f43e341a0565b44d78686"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/ui/Cursor.tsx": {
+    "mtime": 1779255098.7807539,
+    "ast_hash": "d213da1d5f54a2d2cc9c0348468f4f0c",
+    "semantic_hash": "d213da1d5f54a2d2cc9c0348468f4f0c"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/ui/Heading.tsx": {
+    "mtime": 1779255098.7811708,
+    "ast_hash": "1e12376303f5993f667589d9e5f9d780",
+    "semantic_hash": "1e12376303f5993f667589d9e5f9d780"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/ui/Tag.tsx": {
+    "mtime": 1779255098.7825718,
+    "ast_hash": "72b99d2923c18b08d3b526a105b2ebe9",
+    "semantic_hash": "72b99d2923c18b08d3b526a105b2ebe9"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/ui/Button.tsx": {
+    "mtime": 1779255098.7801535,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/ui/PromoPopup.tsx": {
+    "mtime": 1779255098.78166,
+    "ast_hash": "d3f32656690dec51ef30b00c15c49e4a",
+    "semantic_hash": "d3f32656690dec51ef30b00c15c49e4a"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/Newsletter.tsx": {
+    "mtime": 1779255098.7717505,
+    "ast_hash": "641c8c2f4d0e832bfd591a915de91ba8",
+    "semantic_hash": "641c8c2f4d0e832bfd591a915de91ba8"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/Hero.tsx": {
+    "mtime": 1779255098.7526498,
+    "ast_hash": "9b7d48b17bf8f8e9331bb313799c7237",
+    "semantic_hash": "9b7d48b17bf8f8e9331bb313799c7237"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/_VideoBg.tsx": {
+    "mtime": 1779255098.7790754,
+    "ast_hash": "e756f10dd10f45c5297ee1521bc65753",
+    "semantic_hash": "e756f10dd10f45c5297ee1521bc65753"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/ContactPanel.tsx": {
+    "mtime": 1779255098.7382169,
+    "ast_hash": "ff194da4924617d42b03afed7f9e404b",
+    "semantic_hash": "ff194da4924617d42b03afed7f9e404b"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/TuEvento.tsx": {
+    "mtime": 1779255098.7786562,
+    "ast_hash": "b4a477c67bb3849653d3bc0d03ccab83",
+    "semantic_hash": "b4a477c67bb3849653d3bc0d03ccab83"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/StoryPanel.tsx": {
+    "mtime": 1779255098.7770343,
+    "ast_hash": "3c30eb11b151b57d846f2c74fe286808",
+    "semantic_hash": "3c30eb11b151b57d846f2c74fe286808"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/ImaginaTuExperiencia.tsx": {
+    "mtime": 1779255098.7529526,
+    "ast_hash": "7732a3b029920b0ae85f7cbb30a97b37",
+    "semantic_hash": "7732a3b029920b0ae85f7cbb30a97b37"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/MenuPreview.tsx": {
+    "mtime": 1779255098.767431,
+    "ast_hash": "474ac94c19f8c719a64c5871cbacc9fd",
+    "semantic_hash": "474ac94c19f8c719a64c5871cbacc9fd"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/GalleryMasonry.tsx": {
+    "mtime": 1779255098.7522411,
+    "ast_hash": "478e429baefb2d7c142bfb4a45edb780",
+    "semantic_hash": "478e429baefb2d7c142bfb4a45edb780"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/sections/Reviews.tsx": {
+    "mtime": 1779255098.7729533,
+    "ast_hash": "cb7e2f138c75255fe552152419acea60",
+    "semantic_hash": "cb7e2f138c75255fe552152419acea60"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/layout/WhatsAppCTA.tsx": {
+    "mtime": 1779255098.7377963,
+    "ast_hash": "d525e2f6678597c44701235bca15123c",
+    "semantic_hash": "d525e2f6678597c44701235bca15123c"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/layout/Footer.tsx": {
+    "mtime": 1779255098.7367065,
+    "ast_hash": "e80f6e5ba46cf0a389f2a3e47847129c",
+    "semantic_hash": "e80f6e5ba46cf0a389f2a3e47847129c"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/components/layout/Header.tsx": {
+    "mtime": 1779255098.7373946,
+    "ast_hash": "f0f53281d7aac68f2a634cc0a9789f00",
+    "semantic_hash": "f0f53281d7aac68f2a634cc0a9789f00"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/lib/jsonld.tsx": {
+    "mtime": 1779255098.7860472,
+    "ast_hash": "ab6447696431992d1fb4e3fde224321c",
+    "semantic_hash": "ab6447696431992d1fb4e3fde224321c"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/lib/analytics.tsx": {
+    "mtime": 1779255098.7856898,
+    "ast_hash": "efb3326aa023bd84fdce4e6d050069ba",
+    "semantic_hash": "efb3326aa023bd84fdce4e6d050069ba"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/lib/seo.ts": {
+    "mtime": 1779255098.7865672,
+    "ast_hash": "b9122976c881823ba32ad45c901e36b0",
+    "semantic_hash": "b9122976c881823ba32ad45c901e36b0"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/i18n/en.json": {
+    "mtime": 1779255098.7845263,
+    "ast_hash": "d766a5f111a48a24de96240979ba3102",
+    "semantic_hash": "d766a5f111a48a24de96240979ba3102"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/i18n/request.ts": {
+    "mtime": 1779255098.7851124,
+    "ast_hash": "fc1936555802057e36a15b04be7ac2ab",
+    "semantic_hash": "fc1936555802057e36a15b04be7ac2ab"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/src/i18n/es.json": {
+    "mtime": 1779255098.7848163,
+    "ast_hash": "a43c95a317146dc8e9ac8a166041349d",
+    "semantic_hash": "a43c95a317146dc8e9ac8a166041349d"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/public/assets/home/Rosatto-Acapulco-Restaurante.mp4": {
+    "mtime": 1779255095.7528076,
+    "ast_hash": "60dd58771f3d48d02da40009c113f58d",
+    "semantic_hash": "60dd58771f3d48d02da40009c113f58d"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/public/assets/home/video-Rosatto-desktop_1.mp4": {
+    "mtime": 1779255097.155965,
+    "ast_hash": "3d3ba1d2e6c656c0cf7bf95f6702aa93",
+    "semantic_hash": "3d3ba1d2e6c656c0cf7bf95f6702aa93"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/public/assets/home/video-dolores-desktop.mp4": {
+    "mtime": 1779255098.3623657,
+    "ast_hash": "a3cb77049eecdb353eee2537e7fde690",
+    "semantic_hash": "a3cb77049eecdb353eee2537e7fde690"
+  },
+  "/Users/Pepe/Documents/GitHub/rosatto-web/public/assets/home/video-Rosatto-desktop.mp4": {
+    "mtime": 1779255096.7631724,
+    "ast_hash": "7b9b95731bddf91c37e79333199f5f7d",
+    "semantic_hash": "7b9b95731bddf91c37e79333199f5f7d"
+  }
+}

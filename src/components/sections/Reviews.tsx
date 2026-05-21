@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import RevealTitle from "@/components/ui/RevealTitle";
 
 // --- Datos de Muestra (8 reseñas) ---
 const reviewsData = [
@@ -247,9 +248,10 @@ export default function Reviews() {
       `}</style>
 
       {/* Título de la Sección */}
-      <h2 className="font-display uppercase text-center text-dl-dark tracking-ultra text-4xl md:text-5xl leading-none mb-12 md:mb-16">
-        Lo que nuestros clientes opinan...
-      </h2>
+      <RevealTitle
+        text="Lo que nuestros clientes opinan..."
+        className="font-display uppercase text-center text-dl-dark tracking-ultra text-4xl md:text-5xl leading-none mb-12 md:mb-16"
+      />
 
       {/* --- Fila 1: Dirección Normal (<-) --- */}
       <div className="marquee-row w-full max-w-none overflow-hidden relative" tabIndex={0}>

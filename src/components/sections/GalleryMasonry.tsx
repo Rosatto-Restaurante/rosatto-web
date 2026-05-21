@@ -11,7 +11,7 @@ const photos = [
 
 export default function GalleryMasonry() {
   return (
-    <section className="bg-dl.cream py-14">
+    <section className="bg-dl-cream py-14">
       <div className="mx-auto max-w-6xl px-4 columns-2 md:columns-3 gap-4 [column-fill:_balance]">
         {photos.map((p, i) => (
           <div key={i} className="mb-4 break-inside-avoid overflow-hidden rounded-card">

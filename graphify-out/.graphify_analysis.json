@@ -1,0 +1,310 @@
+{
+  "communities": {
+    "0": [
+      "app_page_home",
+      "content_home_es_homecontent",
+      "layout_footer_footer",
+      "layout_header_header",
+      "layout_whatsappcta_whatsappcta",
+      "lib_analytics_sendgtmevent",
+      "lib_jsonld_jsonld",
+      "sections_contactpanel_contactpanel",
+      "sections_hero_hero",
+      "sections_newsletter_newsletter",
+      "sections_storypanel_storypanel",
+      "sections_tuevento_tuevento",
+      "src_app_page_tsx",
+      "src_components_layout_footer_tsx",
+      "src_components_layout_header_tsx",
+      "src_components_sections_hero_tsx",
+      "src_components_sections_imaginatuexperiencia_tsx",
+      "src_components_sections_tuevento_tsx",
+      "src_content_home_es_ts",
+      "src_lib_analytics_tsx",
+      "src_lib_jsonld_tsx"
+    ],
+    "1": [
+      "rosatto_web_tsconfig_compileroptions",
+      "rosatto_web_tsconfig_compileroptions_allowjs",
+      "rosatto_web_tsconfig_compileroptions_esmoduleinterop",
+      "rosatto_web_tsconfig_compileroptions_incremental",
+      "rosatto_web_tsconfig_compileroptions_isolatedmodules",
+      "rosatto_web_tsconfig_compileroptions_jsx",
+      "rosatto_web_tsconfig_compileroptions_lib",
+      "rosatto_web_tsconfig_compileroptions_module",
+      "rosatto_web_tsconfig_compileroptions_moduleresolution",
+      "rosatto_web_tsconfig_compileroptions_noemit",
+      "rosatto_web_tsconfig_compileroptions_paths",
+      "rosatto_web_tsconfig_compileroptions_plugins",
+      "rosatto_web_tsconfig_compileroptions_resolvejsonmodule",
+      "rosatto_web_tsconfig_compileroptions_skiplibcheck",
+      "rosatto_web_tsconfig_compileroptions_strict",
+      "rosatto_web_tsconfig_compileroptions_target",
+      "rosatto_web_tsconfig_exclude",
+      "rosatto_web_tsconfig_include",
+      "rosatto_web_tsconfig_paths",
+      "tsconfig_json"
+    ],
+    "2": [
+      "package_json",
+      "rosatto_web_package_dependencies",
+      "rosatto_web_package_dependencies_lucide_react",
+      "rosatto_web_package_dependencies_next",
+      "rosatto_web_package_dependencies_next_intl",
+      "rosatto_web_package_dependencies_next_seo",
+      "rosatto_web_package_dependencies_next_third_parties",
+      "rosatto_web_package_dependencies_react",
+      "rosatto_web_package_dependencies_react_dom",
+      "rosatto_web_package_dependencies_zod",
+      "rosatto_web_package_name",
+      "rosatto_web_package_private",
+      "rosatto_web_package_scripts",
+      "rosatto_web_package_scripts_build",
+      "rosatto_web_package_scripts_dev",
+      "rosatto_web_package_scripts_lint",
+      "rosatto_web_package_scripts_start",
+      "rosatto_web_package_version"
+    ],
+    "3": [
+      "eslint_config_mjs",
+      "rosatto_web_eslint_config_compat",
+      "rosatto_web_eslint_config_dirname",
+      "rosatto_web_eslint_config_filename",
+      "rosatto_web_package_devdependencies",
+      "rosatto_web_package_devdependencies_autoprefixer",
+      "rosatto_web_package_devdependencies_eslint",
+      "rosatto_web_package_devdependencies_eslint_eslintrc",
+      "rosatto_web_package_devdependencies_postcss",
+      "rosatto_web_package_devdependencies_tailwindcss",
+      "rosatto_web_package_devdependencies_types_node",
+      "rosatto_web_package_devdependencies_types_react",
+      "rosatto_web_package_devdependencies_typescript"
+    ],
+    "4": [
+      "booking_page_bookingpage",
+      "menu_page_menupage",
+      "rosatto_web_package_dependencies_clsx",
+      "src_app_booking_page_tsx",
+      "src_app_menu_page_tsx",
+      "src_components_ui_heading_tsx",
+      "ui_heading_heading",
+      "ui_heading_level",
+      "ui_heading_map",
+      "ui_heading_props"
+    ],
+    "5": [
+      "app_fonts_display",
+      "app_fonts_sans",
+      "app_layout_metadata",
+      "app_layout_rootlayout",
+      "lib_analytics_analytics",
+      "src_app_fonts_ts",
+      "src_app_layout_tsx",
+      "src_components_ui_cursor_tsx",
+      "ui_cursor_cursor"
+    ],
+    "6": [
+      "i18n_es_booking",
+      "i18n_es_contact",
+      "i18n_es_gallery",
+      "i18n_es_home",
+      "i18n_es_home_cta",
+      "i18n_es_home_title",
+      "i18n_es_menu",
+      "src_i18n_es_json"
+    ],
+    "7": [
+      "i18n_en_booking",
+      "i18n_en_contact",
+      "i18n_en_gallery",
+      "i18n_en_home",
+      "i18n_en_home_cta",
+      "i18n_en_home_title",
+      "i18n_en_menu",
+      "src_i18n_en_json"
+    ],
+    "8": [
+      "sections_reviews_platformstyles",
+      "sections_reviews_reviewcard",
+      "sections_reviews_reviews",
+      "sections_reviews_reviewsdata",
+      "sections_reviews_staricon",
+      "src_components_sections_reviews_tsx"
+    ],
+    "9": [
+      "sections_menupreview_homecontent",
+      "sections_menupreview_menupreview",
+      "sections_menupreview_previewcategory",
+      "sections_menupreview_previewitem"
+    ],
+    "10": [
+      "claude_settings_hooks",
+      "claude_settings_hooks_pretooluse",
+      "claude_settings_json"
+    ],
+    "11": [
+      "middleware_ts",
+      "rosatto_web_middleware_config",
+      "rosatto_web_middleware_i18n"
+    ],
+    "12": [
+      "sections_gallerymasonry_gallerymasonry",
+      "sections_gallerymasonry_photos",
+      "src_components_sections_gallerymasonry_tsx"
+    ],
+    "13": [
+      "sections_videobg_props",
+      "sections_videobg_videobg",
+      "src_components_sections_videobg_tsx"
+    ],
+    "14": [
+      "src_components_ui_tag_tsx",
+      "ui_tag_props",
+      "ui_tag_tag"
+    ],
+    "15": [
+      "config_app_app",
+      "src_config_app_ts"
+    ],
+    "16": [
+      "lib_seo_defaultseo",
+      "src_lib_seo_ts"
+    ],
+    "17": [
+      "robots_txt_route_get",
+      "src_app_robots_txt_route_ts"
+    ],
+    "18": [
+      "rosatto_web_tailwind_config_config",
+      "tailwind_config_js"
+    ],
+    "19": [
+      "app_sitemap_sitemap",
+      "src_app_sitemap_ts"
+    ],
+    "20": [
+      "src_components_ui_promopopup_tsx",
+      "ui_promopopup_promopopup"
+    ],
+    "21": [
+      "next_config_js"
+    ],
+    "22": [
+      "next_env_d_ts"
+    ],
+    "23": [
+      "graphify_detect_sh"
+    ],
+    "24": [
+      "graphify_setup_sh"
+    ],
+    "25": [
+      "postcss_config_js"
+    ],
+    "26": [
+      "src_components_ui_button_tsx"
+    ],
+    "27": [
+      "src_i18n_request_ts"
+    ]
+  },
+  "cohesion": {
+    "0": 0.22380952380952382,
+    "1": 0.1,
+    "2": 0.1111111111111111,
+    "3": 0.15384615384615385,
+    "4": 0.2,
+    "5": 0.2777777777777778,
+    "6": 0.39285714285714285,
+    "7": 0.39285714285714285,
+    "8": 0.3333333333333333,
+    "9": 0.5,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666,
+    "12": 0.6666666666666666,
+    "13": 0.6666666666666666,
+    "14": 0.6666666666666666,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0
+  },
+  "gods": [
+    {
+      "id": "rosatto_web_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "lib_analytics_sendgtmevent",
+      "label": "sendGTMEvent()",
+      "degree": 9
+    },
+    {
+      "id": "content_home_es_homecontent",
+      "label": "homeContent",
+      "degree": 7
+    },
+    {
+      "id": "rosatto_web_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "sections_newsletter_newsletter",
+      "label": "Newsletter()",
+      "degree": 5
+    },
+    {
+      "id": "sections_contactpanel_contactpanel",
+      "label": "ContactPanel()",
+      "degree": 5
+    },
+    {
+      "id": "sections_menupreview_menupreview",
+      "label": "MenuPreview()",
+      "degree": 4
+    },
+    {
+      "id": "sections_storypanel_storypanel",
+      "label": "StoryPanel()",
+      "degree": 3
+    },
+    {
+      "id": "layout_whatsappcta_whatsappcta",
+      "label": "WhatsAppCTA()",
+      "degree": 3
+    },
+    {
+      "id": "i18n_en_home",
+      "label": "home",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Heading()",
+      "target": "clsx",
+      "source_files": [
+        "src/components/ui/Heading.tsx",
+        "package.json"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

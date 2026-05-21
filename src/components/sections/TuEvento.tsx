@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { homeContent } from "@/content/home.es";
 import { sendGTMEvent } from "@/lib/analytics";
+import RevealTitle from "@/components/ui/RevealTitle";
 
 export default function TuEvento() {
   const te = homeContent.tuEvento;
@@ -21,22 +22,21 @@ export default function TuEvento() {
         
         <div className="py-16 md:py-24"> 
           {/* Subtítulo 2 */}
-          <h2
+          <RevealTitle
+            text={te.h2}
             className={[
               "font-display uppercase text-dl-dark",
               "tracking-ultra",
               "text-4xl md:text-5xl leading-none py-10",
             ].join(" ")}
-          >
-            {te.h2}
-          </h2>
+          />
 
           {/* Párrafos */}
           <div className="leading-relaxed space-y-4 text-base">
-            <p>{te.p1}</p>
-            <p>{te.p2}</p>
-            <p>{te.p3}</p>
-            <p>{te.p4}</p>
+            <p className="reveal-text">{te.p1}</p>
+            <p className="reveal-text">{te.p2}</p>
+            <p className="reveal-text">{te.p3}</p>
+            <p className="reveal-text">{te.p4}</p>
           </div>
 
           {/* CTA centrada */}

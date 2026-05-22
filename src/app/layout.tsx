@@ -3,6 +3,7 @@ import "./globals.css";
 import { display, sans } from "./fonts";
 import Cursor from "@/components/ui/Cursor";
 import { Analytics } from "@/lib/analytics"; // <--- IMPORTANTE
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 export const metadata = { title: "Rosatto", description: "Restaurante Rosatto – Acapulco" };
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${display.variable} ${sans.variable} font-sans bg-dl-cream text-dl-gray antialiased overflow-x-hidden`}>
         <Cursor />
         {children}
+        <VercelAnalytics />
       </body>
     </html>
   );

@@ -59,10 +59,28 @@ export const homeContent = {
         height: 1200
       },
       { 
-        src: "/assets/gallery/postre-de-cumpleanos-rosatto-acapulco.webp", 
-        alt: "Postre de cumpleaños decorado con flores comestibles. Celebración personalizada en Rosatto Acapulco.",
-        width: 1200,
-        height: 800
+        src: "/assets/menu/experiencia-corte-de-carnes-rosatto-acapulco.webp", 
+        alt: "Corte de carne Rib Eye a la parrilla en Rosatto Acapulco",
+        width: 800,
+        height: 1200
+      },
+      { 
+        src: "/assets/menu/aperol-gin-Rosatto-Acapulco.webp", 
+        alt: "Coctel Aperol Gin bebida en Rosatto Acapulco",
+        width: 800,
+        height: 1200
+      },
+      { 
+        src: "/assets/menu/pasta-Panna-Con-Camarones-Rosatto-Acapulco.webp", 
+        alt: "Pasta Panna con camarones y queso en Rosatto Acapulco",
+        width: 800,
+        height: 1200
+      },
+      { 
+        src: "/assets/menu/Risotto-de-callo-de-hacha-Rosatto-Acapulco.webp", 
+        alt: "Risotto con callo de hacha en Rosatto Acapulco",
+        width: 800,
+        height: 1200
       },
       { 
         src: "/assets/gallery/pasta-gratinada-rosatto.webp", 

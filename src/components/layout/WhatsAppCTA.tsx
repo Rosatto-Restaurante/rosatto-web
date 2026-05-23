@@ -14,7 +14,7 @@ export default function WhatsAppCTA() {
 
   return (
     <a
-      href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20reservar%20en%20Rosatto%20para%20hoy%2010%20de%20mayo.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F"
+      href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Rosatto%20para%20el%20d%C3%ADa%20___%20a%20las%20___.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"

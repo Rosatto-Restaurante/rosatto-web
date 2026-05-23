@@ -61,10 +61,10 @@ export default function RevealTitle({ text, as: Tag = "h2", className, immediate
           className="inline-block overflow-hidden mr-[0.25em] py-[0.05em] align-bottom"
         >
           <span
-            className="inline-block transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] transform-gpu"
+            className="inline-block transition-transform duration-[1.8s] ease-[cubic-bezier(0.16,1,0.3,1)] transform-gpu"
             style={{
               transform: isVisible ? "translateY(0)" : "translateY(105%)",
-              transitionDelay: `${i * 0.05}s`,
+              transitionDelay: `${0.35 + i * 0.12}s`,
             }}
           >
             {word}

@@ -6,6 +6,9 @@ import { Analytics } from "@/lib/analytics"; // <--- IMPORTANTE
 import ScrollRevealProvider from "@/components/ui/ScrollRevealProvider";
 import SplashScreen from "@/components/ui/SplashScreen";
 
+
+
+
 export const metadata = { title: "Rosatto", description: "Restaurante Rosatto – Acapulco" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -13,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className="overflow-x-hidden">
       {/* Inyectamos GTM aquí para que Next.js lo maneje eficientemente */}
       <Analytics />
-      
+
       <body className={`${display.variable} ${sans.variable} font-sans bg-dl-cream text-dl-gray antialiased overflow-x-hidden`}>
         <SplashScreen />
         <Cursor />

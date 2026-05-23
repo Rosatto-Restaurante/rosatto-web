@@ -10,13 +10,13 @@ interface ParallaxImageProps extends Omit<ImageProps, "className" | "style"> {
   style?: React.CSSProperties;
 }
 
-export default function ParallaxImage({ 
-  speed = 0.15, 
-  containerClassName = "", 
-  imageClassName = "", 
-  alt, 
+export default function ParallaxImage({
+  speed = 0.25,
+  containerClassName = "",
+  imageClassName = "",
+  alt,
   style,
-  ...props 
+  ...props
 }: ParallaxImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -35,7 +35,7 @@ export default function ParallaxImage({
     const updatePosition = () => {
       const rect = container.getBoundingClientRect();
       const viewHeight = window.innerHeight;
-      
+
       if (rect.top <= viewHeight && rect.bottom >= 0) {
         const totalDistance = viewHeight + rect.height;
         const scrolled = viewHeight - rect.top;

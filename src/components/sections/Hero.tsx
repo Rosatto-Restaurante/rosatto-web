@@ -34,10 +34,10 @@ export default function Hero() {
       {/* Contenedor del video full-screen */}
       <section
         aria-label="Hero video"
-        className="relative w-full h-[66svh] md:h-[58svh] overflow-hidden"
+        className="relative w-full overflow-hidden bg-black flex flex-col"
       >
         <video
-          className="absolute inset-0 h-full w-full object-cover z-10"
+          className="relative w-full h-auto z-10 object-cover"
           poster={posterUrl}
           preload="metadata"
           autoPlay
@@ -54,7 +54,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center z-0"
+          className="object-contain object-center z-0"
         />
 
         <div className="absolute inset-0 z-20 bg-black/40" />
@@ -85,7 +85,7 @@ export default function Hero() {
                 {cta && (
                   <div className="mt-6 md:mt-8 text-center">
                     <Link 
-                      href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20reservar%20en%20Rosatto%20para%20hoy%2010%20de%20mayo.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F" // ENLACE ORIGINAL
+                      href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Rosatto%20para%20el%20d%C3%ADa%20___%20a%20las%20___.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F" // ENLACE ORIGINAL
                       target="_blank"
                       className="hero-cta"
                       // Tracking de GTM

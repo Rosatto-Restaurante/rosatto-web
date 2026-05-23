@@ -18,7 +18,7 @@ export const homeContent = {
     cta: "¡Te estamos esperando!",
 
     // Video y Poster (Rutas en /public)
-    video: "/assets/home/video-Rosatto-desktop_1.mp4?v=2",
+    video: "/assets/home/Rosatto-Acapulco-Restaurante.mp4",
     poster: "/assets/home/experiencia-cena-y-brindis-en-rosatto-costa-azul.webp",
   },
 

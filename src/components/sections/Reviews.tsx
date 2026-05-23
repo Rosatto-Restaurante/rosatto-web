@@ -177,14 +177,14 @@ const ReviewCard = ({ review }: { review: (typeof reviewsData)[0] }) => {
 /**
  * Icono de estrella
  */
-const StarIcon = () => (
+const StarIcon = ({ className }: { className?: string }) => (
   <svg
     width="20"
     height="19"
     viewBox="0 0 22 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="text-dl-gold"
+    className={className || "text-dl-gold"}
   >
     <path
       d="M10.525.464a.5.5 0 0 1 .95 0l2.107 6.482a.5.5 0 0 0 .475.346h6.817a.5.5 0 0 1 .294.904l-5.515 4.007a.5.5 0 0 0-.181.559l2.106 6.483a.5.5 0 0 1-.77.559l-5.514-4.007a.5.5 0 0 0-.588 0l-5.514 4.007a.5.5 0 0 1-.77-.56l2.106-6.482a.5.5 0 0 0-.181-.56L.832 8.197a.5.5 0 0 1 .294-.904h6.817a.5.5 0 0 0 .475-.346z"
@@ -208,12 +208,12 @@ export default function Reviews() {
 
   // Duplicamos los datos para el bucle infinito
   const row1Reviews = [...reviewsData, ...reviewsData];
-  
+
   // Segunda fila con orden diferente (y luego irá en reversa visualmente)
   const row2Reviews = [
-    ...reviewsData.slice(4), 
-    ...reviewsData.slice(0, 4), 
-    ...reviewsData.slice(4), 
+    ...reviewsData.slice(4),
+    ...reviewsData.slice(0, 4),
+    ...reviewsData.slice(4),
     ...reviewsData.slice(0, 4),
   ];
 
@@ -258,9 +258,8 @@ export default function Reviews() {
         <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-dl-cream to-transparent"></div>
 
         <div
-          className={`marquee-inner flex w-max transform-gpu py-4 ${
-            isAnimating ? "animate-marquee" : ""
-          }`}
+          className={`marquee-inner flex w-max transform-gpu py-4 ${isAnimating ? "animate-marquee" : ""
+            }`}
         >
           {row1Reviews.map((review, index) => (
             <ReviewCard key={`r1-${index}`} review={review} />
@@ -275,9 +274,8 @@ export default function Reviews() {
         <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-dl-cream to-transparent"></div>
 
         <div
-          className={`marquee-inner flex w-max transform-gpu py-4 ${
-            isAnimating ? "animate-marquee-reverse" : ""
-          }`}
+          className={`marquee-inner flex w-max transform-gpu py-4 ${isAnimating ? "animate-marquee-reverse" : ""
+            }`}
         >
           {row2Reviews.map((review, index) => (
             <ReviewCard key={`r2-${index}`} review={review} />
@@ -285,6 +283,70 @@ export default function Reviews() {
         </div>
 
         <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-dl-cream to-transparent"></div>
+      </div>
+
+      {/* --- Calificaciones Globales --- */}
+      <div className="mt-20 md:mt-24 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          {/* Card Google */}
+          <div className="bg-white rounded-2xl p-8 shadow-soft flex flex-col items-center text-center transform transition duration-500 hover:scale-[1.03] border border-gray-100">
+            <Image
+              src="/assets/home/Google_Maps_RosattoAcapulco.svg"
+              alt="Google Maps"
+              width={60}
+              height={60}
+              className="h-14 w-auto mb-4"
+            />
+            <div className="flex gap-1 mt-2 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
+              ))}
+            </div>
+            <div className="text-4xl font-display text-dl-dark leading-none mb-2">4.7</div>
+            <div className="text-sm text-dl-grey">122 opiniones en Google*</div>
+          </div>
+
+          {/* Card TripAdvisor */}
+          <div className="bg-white rounded-2xl p-8 shadow-soft flex flex-col items-center text-center transform transition duration-500 hover:scale-[1.03] border border-gray-100">
+            <Image
+              src="/assets/home/Tripadvisor-RosattoAcapulco.svg"
+              alt="TripAdvisor"
+              width={60}
+              height={60}
+              className="h-14 w-auto mb-4"
+            />
+            <div className="flex gap-1 mt-2 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon key={i} className="w-5 h-5 text-green-500" />
+              ))}
+            </div>
+            <div className="text-4xl font-display text-dl-dark leading-none mb-2">4.6</div>
+            <div className="text-sm text-dl-grey">
+              20 opiniones en Tripadvisor*<br />
+              N. 69 de 665 restaurantes en Acapulco
+            </div>
+          </div>
+
+          {/* Card OpenTable */}
+          <div className="bg-white rounded-2xl p-8 shadow-soft flex flex-col items-center text-center transform transition duration-500 hover:scale-[1.03] border border-gray-100">
+            <Image
+              src="/assets/home/OpenTable_RosattoAcapulco.svg"
+              alt="OpenTable"
+              width={60}
+              height={60}
+              className="h-14 w-auto mb-4"
+            />
+            <div className="flex gap-1 mt-2 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon key={i} className="w-5 h-5 text-red-600" />
+              ))}
+            </div>
+            <div className="text-4xl font-display text-dl-dark leading-none mb-2">4.5</div>
+            <div className="text-sm text-dl-grey">23 opiniones en OpenTable*</div>
+          </div>
+          <div className="text-sm text-dl-grey">* Calificaciones y número de opiniones actualizados al mes de Mayo del 2026 </div>
+        </div>
       </div>
     </section>
   );

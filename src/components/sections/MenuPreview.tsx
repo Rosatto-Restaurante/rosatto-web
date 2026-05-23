@@ -262,12 +262,12 @@ export default function MenuPreview() {
       <div className="mx-auto max-w-6xl px-[1.5rem] sm:px-[5rem] lg:px-[6rem] py-[3.5rem] md:py-[4.5rem]">
         
         {/* === TÍTULO === */}
-        <h2 className="font-display uppercase text-center text-3xl md:text-4xl tracking-wide2 text-white mb-4">
+        <h2 className="font-display uppercase text-center text-3xl md:text-4xl tracking-wide2 text-white mb-4 reveal-title-simple">
           DESCUBRE NUESTRO MENÚ
         </h2>
 
         {/* === PÁRRAFO === */}
-        <p className="text-center text-white/90 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-sans mb-8 md:mb-12">
+        <p className="text-center text-white/90 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-sans mb-8 md:mb-12 reveal-text">
           El menú de Rosatto es una invitación a saborear el Mediterráneo desde Acapulco.
           Abre el apetito con tapas y carpaccios para compartir, sigue con nuestras pastas y risottos artesanales para los amantes de lo clásico, y descubre la intensidad de los mariscos frescos preparados con la esencia del mar o alguno de nuestros cortes premium a la parrilla. Para el cierre nuestros postres italianos transformarán cada comida en un recuerdo.
         </p>

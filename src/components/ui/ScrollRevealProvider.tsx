@@ -19,7 +19,7 @@ export default function ScrollRevealProvider() {
       },
       {
         threshold: 0,
-        rootMargin: "50px", // Trigger slightly before it enters, or immediately when it does, ensuring bottom elements don't fail
+        rootMargin: "0px 0px -50px 0px", // Asegura que el elemento haya entrado un poco a la pantalla antes de animarse
       }
     );
 

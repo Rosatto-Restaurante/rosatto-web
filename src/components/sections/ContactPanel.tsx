@@ -4,7 +4,7 @@
  * @component ContactPanel
  * @description Panel de información de contacto detallada con VIDEO DE FONDO.
  * * DATOS REALES RESTAURADOS:
- * - WhatsApp Link: https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20reservar%20en%20Rosatto%20para%20hoy%2010%20de%20mayo.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F
+ * - WhatsApp Link: https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Rosatto%20para%20el%20d%C3%ADa%20___%20a%20las%20___.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F
  * - Google Maps: https://maps.google.com/?q=Rosatto%20Acapulco
  * - Lógica de teléfono: Extrae números de la cadena del CMS.
  * * FUNCIONALIDAD GTM:
@@ -21,7 +21,7 @@ import { sendGTMEvent } from "@/lib/analytics";
 export default function ContactPanel() {
   const c = homeContent.contactTeaser;
   
-  const waLink = "https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20reservar%20en%20Rosatto%20para%20hoy%2010%20de%20mayo.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F"; 
+  const waLink = "https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Rosatto%20para%20el%20d%C3%ADa%20___%20a%20las%20___.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F"; 
   const phoneLink = `tel:${c.phone.replace(/[^+\d]/g, "")}`;
 
   const track = (action: string) => {

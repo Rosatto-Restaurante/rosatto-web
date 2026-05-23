@@ -49,7 +49,7 @@ export default function StoryPanel() {
           sizes="100vw"
           containerClassName="w-full h-[35svh] sm:h-[45vh] md:h-[65vh]"
           priority={false}
-          speed={0.15}
+          speed={0.50}
         />
       </div>
     </section>

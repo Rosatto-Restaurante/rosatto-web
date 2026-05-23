@@ -8,6 +8,7 @@ interface ParallaxImageProps extends Omit<ImageProps, "className" | "style"> {
   imageClassName?: string;
   speed?: number;
   style?: React.CSSProperties;
+  useNativeImg?: boolean;
 }
 
 export default function ParallaxImage({
@@ -16,6 +17,7 @@ export default function ParallaxImage({
   imageClassName = "",
   alt,
   style,
+  useNativeImg = false,
   ...props
 }: ParallaxImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,12 +67,21 @@ export default function ParallaxImage({
 
   return (
     <div ref={containerRef} className={`relative overflow-hidden block ${containerClassName}`} style={style}>
-      <Image
-        ref={imageRef as any}
-        alt={alt}
-        className={`absolute inset-0 w-full h-full object-cover transform-gpu transition-transform duration-0 ease-linear ${imageClassName}`}
-        {...props}
-      />
+      {useNativeImg ? (
+        <img
+          ref={imageRef as any}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full object-cover transform-gpu transition-transform duration-0 ease-linear ${imageClassName}`}
+          {...(props as any)}
+        />
+      ) : (
+        <Image
+          ref={imageRef as any}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full object-cover transform-gpu transition-transform duration-0 ease-linear ${imageClassName}`}
+          {...props}
+        />
+      )}
     </div>
   );
 }

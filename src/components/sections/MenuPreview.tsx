@@ -2,6 +2,7 @@
 "use client";
 
 import { useMemo, useState, useCallback } from "react";
+import ParallaxImage from "@/components/ui/ParallaxImage";
 
 // --- Contenido del Menú (Sin Precios) ---
 const homeContent = {
@@ -304,15 +305,22 @@ export default function MenuPreview() {
             {activeCategory.items.map((item, i) => {
               const isActive = i === heroIndex;
               return (
-                <img
+                <div
                   key={item.id}
-                  src={item.src}
-                  alt={item.alt}
                   className={[
-                    "absolute inset-0 w-full h-full object-cover transition-opacity duration-700",
-                    isActive ? "opacity-100" : "opacity-0",
+                    "absolute inset-0 w-full h-full transition-opacity duration-700",
+                    isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none",
                   ].join(" ")}
-                />
+                >
+                  <ParallaxImage
+                    src={item.src}
+                    alt={item.alt}
+                    useNativeImg={true}
+                    loading="eager"
+                    containerClassName="w-full h-full"
+                    speed={0.15}
+                  />
+                </div>
               );
             })}
 
@@ -320,20 +328,20 @@ export default function MenuPreview() {
             <button
               aria-label="Anterior"
               onClick={prev}
-              className="absolute left-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/65 hover:bg-white/70 focus:outline-none transition"
+              className="absolute left-[0.75rem] md:left-[1.5rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[3rem] h-[3rem] rounded-full bg-black/40 hover:bg-black/70 backdrop-blur-sm border border-white/20 text-white focus:outline-none transition shadow-lg hover:scale-105"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
 
             <button
               aria-label="Siguiente"
               onClick={next}
-              className="absolute right-[0.75rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[2.6rem] h-[2.6rem] rounded-full bg-white/65 hover:bg-white/70 focus:outline-none transition"
+              className="absolute right-[0.75rem] md:right-[1.5rem] top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-[3rem] h-[3rem] rounded-full bg-black/40 hover:bg-black/70 backdrop-blur-sm border border-white/20 text-white focus:outline-none transition shadow-lg hover:scale-105"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
 
@@ -343,22 +351,20 @@ export default function MenuPreview() {
               return (
                 <figcaption
                   className={[
-                    "absolute bottom-[1.25rem] left-1/2 -translate-x-1/2",
-                    "w-[min(1100px,calc(100%-2rem))]", 
-                    "rounded-[12px] border border-white/20 bg-white/45 backdrop-blur-[2px]", 
-                    "py-[0.95rem] px-[1rem] md:px-[1.25rem]",
-                    "shadow-[0_12px_30px_rgba(0,0,0,.20)]",
-                    // Ajustado para centrar el texto ahora que no hay precio a la derecha
+                    "absolute bottom-[1.5rem] md:bottom-[2rem] left-1/2 -translate-x-1/2 z-20",
+                    "w-[min(90%,600px)]", 
+                    "rounded-[16px] border border-white/15 bg-black/50 backdrop-blur-md", 
+                    "py-[1.25rem] px-[1.5rem]",
+                    "shadow-[0_15px_35px_rgba(0,0,0,.40)]",
                     "flex flex-col items-center justify-center text-center",
                   ].join(" ")}
                 >
                   <div className="min-w-0">
-                    <h3 className="font-medium text-[1.5rem] md:text-[1.2rem] text-[#0D141B] truncate font-display uppercase tracking-wide">
+                    <h3 className="font-medium text-[1.5rem] md:text-[1.75rem] text-white truncate font-display uppercase tracking-widest drop-shadow-md">
                       {item.title}
                     </h3>
-                    <p className="text-[1rem] text-[#0D141B]/80 truncate font-sans">{item.caption}</p>
+                    <p className="text-[1rem] md:text-[1.1rem] text-white/80 font-sans mt-1 drop-shadow-sm line-clamp-2">{item.caption}</p>
                   </div>
-                  {/* PRECIO ELIMINADO AQUÍ */}
                 </figcaption>
               );
             })()}
@@ -375,19 +381,23 @@ export default function MenuPreview() {
                 aria-label={`Ver ${item.title}`}
                 onClick={() => setHeroIndex(i)}
                 className={[
-                  "group relative aspect-[4/3] overflow-hidden rounded-[10px] focus:outline-none transition",
+                  "group relative aspect-[4/3] overflow-hidden rounded-[10px] focus:outline-none transition duration-500",
                   active
-                    ? "ring-2 ring-white/90 shadow-[0_8px_24px_rgba(0,0,0,.35)] opacity-100"
-                    : "ring-0 hover:ring-2 hover:ring-white/60 opacity-70 hover:opacity-100",
+                    ? "ring-2 ring-[#C8A661] shadow-[0_8px_24px_rgba(0,0,0,.4)] opacity-100 scale-100"
+                    : "ring-0 hover:ring-1 hover:ring-white/40 opacity-50 hover:opacity-100 hover:scale-95",
                 ].join(" ")}
               >
-                <img
+                <ParallaxImage
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  loading="lazy"
+                  fill
+                  unoptimized={true}
+                  sizes="(max-width: 768px) 33vw, 20vw"
+                  containerClassName="w-full h-full"
+                  imageClassName="group-hover:scale-[1.15] transition-transform duration-700 ease-out"
+                  speed={0.1}
                 />
-                <span className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition" aria-hidden />
+                <span className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500" aria-hidden />
               </button>
             );
           })}

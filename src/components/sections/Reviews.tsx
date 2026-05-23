@@ -249,8 +249,8 @@ export default function Reviews() {
 
       {/* Título de la Sección */}
       <RevealTitle
-        text="Lo que nuestros clientes opinan..."
-        className="font-display uppercase text-center text-dl-dark tracking-ultra text-4xl md:text-5xl leading-none mb-12 md:mb-16"
+        text="No lo decimos nosotros..."
+        className="font-display uppercase text-center text-dl-dark tracking-ultra text-4xl md:text-5xl leading-none mb-12 md:mb-16 px-4"
       />
 
       {/* --- Fila 1: Dirección Normal (<-) --- */}
@@ -286,7 +286,11 @@ export default function Reviews() {
       </div>
 
       {/* --- Calificaciones Globales --- */}
-      <div className="mt-20 md:mt-24 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <RevealTitle
+        text="Nos encanta dejarte un buen sabor de boca"
+        className="font-display uppercase text-center text-dl-dark tracking-ultra text-4xl md:text-5xl leading-none mt-20 md:mt-24 mb-12 md:mb-16 px-4"
+      />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* Card Google */}

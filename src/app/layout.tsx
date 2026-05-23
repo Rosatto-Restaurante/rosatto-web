@@ -9,7 +9,13 @@ import SplashScreen from "@/components/ui/SplashScreen";
 
 
 
-export const metadata = { title: "Rosatto", description: "Restaurante Rosatto – Acapulco" };
+export const metadata = {
+  title: "Rosatto",
+  description: "Restaurante Rosatto – Acapulco",
+  icons: {
+    icon: "/favicon-rosatto.svg",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

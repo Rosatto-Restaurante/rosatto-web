@@ -5,6 +5,7 @@ import Cursor from "@/components/ui/Cursor";
 import { Analytics } from "@/lib/analytics"; // <--- IMPORTANTE
 import ScrollRevealProvider from "@/components/ui/ScrollRevealProvider";
 import SplashScreen from "@/components/ui/SplashScreen";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Cursor />
         <ScrollRevealProvider />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -52,10 +52,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-medium transition bg-dl-dark text-dl-white hover:bg-dl-black border border-dl-gold/20"
-                onClick={() => sendGTMEvent('conversion_intent', { 
-                  location: 'header_desktop', 
-                  type: 'reservation_click' 
-                })}
+                onClick={() => sendGTMEvent('contact_click', { method: 'whatsapp', location: 'header' })}
               >
                 Reservar
               </Link>
@@ -68,10 +65,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-medium transition bg-dl-magenta text-dl-white hover:bg-dl-black"
-                onClick={() => sendGTMEvent('conversion_intent', { 
-                  location: 'header_mobile', 
-                  type: 'reservation_click' 
-                })}
+                onClick={() => sendGTMEvent('contact_click', { method: 'whatsapp', location: 'header' })}
               >
                 Reservar
               </Link>

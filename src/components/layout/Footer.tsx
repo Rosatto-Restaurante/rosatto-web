@@ -19,7 +19,7 @@ import { sendGTMEvent } from "@/lib/analytics";
 export default function Footer() {
   
   const trackClick = (type: string, label: string) => {
-    sendGTMEvent('click_footer', { type, label });
+    sendGTMEvent('click_footer', { type, label, location: 'footer' });
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Footer() {
               <Link 
                 href="tel:+527444097491" // TELÉFONO ORIGINAL
                 className="underline hover:opacity-80"
-                onClick={() => trackClick('contact', 'phone')}
+                onClick={() => sendGTMEvent('contact_click', { method: 'call', location: 'footer' })}
               >
                 +52 744 409 7491
               </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-dl-white transition-colors"
-                onClick={() => trackClick('map', 'google_maps')}
+                onClick={() => sendGTMEvent('contact_click', { method: 'maps', location: 'footer' })}
               >
                 Google Maps
               </a>

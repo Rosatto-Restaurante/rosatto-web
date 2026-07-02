@@ -11,10 +11,7 @@ export default function TuEvento() {
   const te = homeContent.tuEvento;
 
   const handleEventClick = () => {
-    sendGTMEvent('conversion_intent', { 
-      category: 'events', 
-      label: 'plan_event_click' 
-    });
+    sendGTMEvent('contact_click', { method: 'whatsapp', location: 'tu_evento' });
   };
 
   return (

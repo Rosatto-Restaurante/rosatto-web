@@ -88,8 +88,7 @@ export default function Hero() {
                       href="https://api.whatsapp.com/send?phone=5217444097491&text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Rosatto%20para%20el%20d%C3%ADa%20___%20a%20las%20___.%20Somos%20___%20personas.%20%C2%BFTienen%20disponibilidad%3F" // ENLACE ORIGINAL
                       target="_blank"
                       className="hero-cta"
-                      // Tracking de GTM
-                      onClick={() => sendGTMEvent('click_hero_cta', { label: cta })}
+                      onClick={() => sendGTMEvent('contact_click', { method: 'whatsapp', location: 'hero' })}
                     >
                       <span className="label">{cta}</span>
                       <span aria-hidden className="arrow">→</span>

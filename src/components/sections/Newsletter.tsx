@@ -21,6 +21,7 @@ export default function Newsletter() {
     // TRACKING: Evento de conversión
     sendGTMEvent('form_submit', { 
       form_id: 'newsletter_home', 
+      location: 'newsletter',
       status: 'success' 
     });
 

@@ -6,10 +6,7 @@ import { sendGTMEvent } from "@/lib/analytics";
 export default function WhatsAppCTA() {
   const handleClick = () => {
     // Enviamos el evento al DataLayer
-    sendGTMEvent('click_whatsapp', { 
-      location: 'floating_button', 
-      destination: 'general' 
-    });
+    sendGTMEvent('contact_click', { method: 'whatsapp', location: 'floating_button' });
   };
 
   return (
